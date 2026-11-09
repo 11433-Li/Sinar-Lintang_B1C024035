@@ -102,8 +102,6 @@ Mata kuliah ini bertujuan untuk mempelajari dan mengeksplorasi penerapan teknik 
 
 Mahasiswa akan mempelajari konsep dasar kecerdasan buatan, algoritma *machine learning*, serta pendekatan komputasi untuk mengolah, menganalisis, dan menginterpretasikan data biologis.
 
-Melalui pembelajaran teori, praktikum pemrograman, studi kasus, dan proyek berbasis masalah, mahasiswa diharapkan mampu menerapkan metode Data Science dan AI untuk membantu menyelesaikan berbagai permasalahan di bidang biologi.
-
 ## Capaian Pembelajaran
 
 Setelah mengikuti mata kuliah ini, mahasiswa diharapkan mampu:
