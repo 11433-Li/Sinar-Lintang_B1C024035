@@ -172,5 +172,5 @@ Ketentuan pengumpulan:
 | No. | Komponen Penilaian | Bobot |
 |:---:|---|:---:|
 | 1 | Kesesuaian hasil pengerjaan dengan luaran yang diminta | 50% |
-| 2 | Kelengkapan Dokumentasi dan kerapihan struktur file serta kepatuhan terhadap prosedur pengumpulan melalui GitHub Pull Request dan LMS ELDIRU. | 50% |
+| 2 | Kesesuaian instruksi dan format pengumpulan | 50% |
 | | **Total** | **100%** |
