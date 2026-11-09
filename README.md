@@ -6,16 +6,72 @@ Selamat datang di repository Data Science and Artificial Intelligence for Biolog
 
 Repository ini dikembangkan sebagai media pembelajaran, dokumentasi, dan kolaborasi dalam mendukung kegiatan perkuliahan. Melalui repository ini, mahasiswa dapat mengakses berbagai materi perkuliahan, lecture notes, contoh implementasi program, dataset, serta praktikum yang berkaitan dengan penerapan Data Science dan Artificial Intelligence dalam bidang biologi.
 
-Mata kuliah ini membahas bagaimana pendekatan komputasi, analisis data, dan kecerdasan buatan dapat dimanfaatkan untuk memahami, menganalisis, serta menyelesaikan berbagai permasalahan di bidang biologi. Mahasiswa akan diperkenalkan pada konsep dasar pengolahan data, eksplorasi dan visualisasi data, machine learning, serta penerapan algoritma kecerdasan buatan pada data biologis.
-
-Melalui pendekatan theory, hands-on practice, and project-based learning, mahasiswa diharapkan mampu mengembangkan keterampilan analitis dan komputasional serta menerapkan metode Data Science dan Artificial Intelligence untuk menghasilkan solusi berbasis data dalam bidang biologi.
-
 ## Tentang Mata Kuliah
 | Description | Details |
 |---|---|
 | **Course Title** | Artificial Intelligence in Biology |
 | **Level** | Undergraduate / Graduate |
 | **Course Focus** | Application of Artificial Intelligence in Biological Research and Practice |
+
+## Persiapan Lingkungan Pembelajaran
+
+Sebelum mengikuti perkuliahan, mahasiswa diharapkan mempersiapkan beberapa akun, perangkat lunak, dan lingkungan komputasi yang akan digunakan selama kegiatan pembelajaran.
+
+### 1. Persiapan Akun GitHub dan Akses Repository
+
+GitHub akan digunakan sebagai media distribusi materi perkuliahan, contoh kode program, tugas, dan dokumentasi praktikum.
+
+- **Membuat Akun GitHub:** Jika belum memiliki akun, silakan mendaftar melalui [GitHub](https://github.com/).
+- **Repository Mata Kuliah:** Kunjungi, bookmark, dan berikan tanda bintang (*Star*) pada repository resmi mata kuliah berikut:
+
+  [**https://github.com/uckypradestha/aibiology**](https://github.com/uckypradestha/aibiology)
+
+- **Mengenal Struktur Repository:** Perhatikan struktur direktori berikut untuk memudahkan akses materi pembelajaran:
+
+  | Direktori | Deskripsi |
+  |---|---|
+  | `lectures/` | Slide perkuliahan dan catatan materi setiap minggu. |
+  | `examples/` | Contoh implementasi program Python dan Jupyter Notebook. |
+  | `assignments/` | Tugas perkuliahan |
+  | `reading/` | Referensi tambahan berupa artikel dan publikasi ilmiah terkait biologi dan AI. |
+
+### 2. Persiapan Akun Google dan Google Colab
+
+Sebagian besar kegiatan komputasi dalam mata kuliah ini, seperti implementasi model *Deep Learning* dan analisis sekuens biologis, akan menggunakan layanan komputasi berbasis cloud. Hal ini bertujuan untuk meminimalkan keterbatasan perangkat keras pada komputer atau laptop mahasiswa.
+
+Persiapan yang perlu dilakukan:
+
+- Pastikan memiliki akun Google yang aktif.
+- Kenali lingkungan pemrograman [**Google Colaboratory (Google Colab)**](https://colab.research.google.com/).
+- Pastikan dapat membuat dan menjalankan *notebook* baru di Google Colab.
+- Pelajari cara mengubah jenis *runtime* melalui menu `Runtime` → `Change runtime type` → pilih `T4 GPU` apabila tersedia.
+- Uji lingkungan pemrograman dengan menjalankan perintah Python sederhana.
+- Pastikan tersedia ruang penyimpanan yang cukup di **Google Drive** untuk menyimpan dataset, hasil eksperimen, dan *model checkpoints*.
+
+### 3. Akses Generative AI (Gemini dan Persiapan API)
+
+Dalam mata kuliah ini, mahasiswa akan diperkenalkan pada pemanfaatan teknologi *Generative AI* dan *Large Language Models (LLMs)* untuk membantu proses pemrograman, penelusuran literatur ilmiah, analisis informasi, serta eksplorasi permasalahan biologis.
+
+Persiapan yang perlu dilakukan:
+
+- **Google Gemini:** Pastikan dapat mengakses layanan [Google Gemini](https://gemini.google.com/) untuk memanfaatkan AI sebagai asisten pembelajaran dan pemrograman.
+- **Google AI Studio (Opsional/Direkomendasikan):** Kunjungi [Google AI Studio](https://aistudio.google.com/) untuk mengenal penggunaan Gemini API.
+- **Gemini API Key:** Mahasiswa dapat mempelajari cara memperoleh API Key untuk kebutuhan implementasi AI berbasis API, eksperimen pemrograman, dan otomatisasi *prompt* apabila diperlukan dalam kegiatan praktikum.
+
+### 4. Persiapan Lingkungan Python Lokal (Opsional)
+
+Google Colab sudah mencukupi untuk sebagian besar kegiatan komputasi dalam mata kuliah ini. Namun, mahasiswa yang ingin menjalankan program secara lokal (*offline*) menggunakan komputer atau laptop dapat mempersiapkan lingkungan Python sebagai berikut:
+
+- **Python 3.10 atau versi lebih baru:** Unduh melalui [Python Official Website](https://www.python.org/) atau gunakan distribusi [Anaconda / Miniconda](https://www.anaconda.com/download).
+- **Visual Studio Code:** Instal [Visual Studio Code](https://code.visualstudio.com/) sebagai editor kode program.
+- **Python Extension:** Instal ekstensi Python pada Visual Studio Code untuk mendukung pengembangan program Python.
+- **Jupyter Extension:** Instal ekstensi Jupyter untuk menjalankan dan mengelola Jupyter Notebook secara lokal.
+
+Pastikan seluruh perangkat lunak telah terinstal dan dapat digunakan dengan baik sebelum mengikuti kegiatan praktikum.
+
+---
+
+**Catatan:** Google Colab merupakan lingkungan komputasi utama yang direkomendasikan dalam mata kuliah ini. Penggunaan Python secara lokal bersifat opsional dan dapat disesuaikan dengan kebutuhan serta kemampuan perangkat masing-masing mahasiswa.
 
 ## Cara Menggunakan Repository
 
