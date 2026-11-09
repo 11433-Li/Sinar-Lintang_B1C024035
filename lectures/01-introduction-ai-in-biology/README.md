@@ -247,3 +247,55 @@ Menggunakan model yang telah dilatih dan dievaluasi untuk menghasilkan prediksi 
   - Mengidentifikasi jenis penyakit tanaman.
   - Mengklasifikasikan jenis sel.
   - Memprediksi karakteristik suatu protein.
+
+
+## Tantangan dan Keterbatasan AI dalam Biologi
+
+Meskipun memiliki potensi besar, penerapan *Artificial Intelligence* (AI) dalam bidang biologi masih menghadapi sejumlah tantangan dan keterbatasan.
+
+1. **Ketersediaan Data (*Data Availability*)**
+   - Tidak semua permasalahan biologis memiliki dataset yang cukup besar.
+   - Dataset yang tersedia belum tentu representatif terhadap kondisi biologis yang sebenarnya.
+
+2. **Kualitas Data (*Data Quality*)**
+   - Kesalahan pengukuran dapat memengaruhi keakuratan data.
+   - Kesalahan anotasi dan proses pengumpulan data dapat menurunkan performa model.
+
+3. **Ketidakseimbangan Data (*Data Imbalance*)**
+   - Distribusi jumlah sampel antar kelas sering kali tidak seimbang.
+   - Kondisi ini dapat menyebabkan model lebih cenderung memprediksi kelas dengan jumlah sampel yang lebih dominan.
+
+4. **Interpretabilitas Model (*Model Interpretability*)**
+   - Beberapa model, khususnya *Deep Learning*, sulit dijelaskan proses pengambilan keputusannya.
+   - Hal ini menyulitkan peneliti dalam memahami alasan di balik hasil prediksi model.
+
+5. **Sumber Daya Komputasi (*Computational Resources*)**
+   - Pelatihan model yang kompleks membutuhkan sumber daya komputasi yang besar.
+   - Kebutuhan tersebut dapat mencakup:
+     - Kapasitas CPU dan GPU.
+     - Memori komputer (RAM).
+     - Kapasitas penyimpanan data.
+
+6. **Validasi Biologis (*Biological Validation*)**
+   - Hasil prediksi AI tetap memerlukan validasi berdasarkan pengetahuan biologis.
+   - Validasi dapat dilakukan melalui:
+     - Kajian literatur ilmiah.
+     - Pengujian atau eksperimen biologis.
+     - Perbandingan dengan hasil penelitian sebelumnya.
+
+7. **Isu Etika dan Privasi (*Ethical and Privacy Issues*)**
+   - Penggunaan data biologis dan genomik harus memperhatikan:
+     - Privasi individu.
+     - Keamanan data.
+     - Persetujuan penggunaan data.
+     - Etika dalam penelitian biologis.
+
+### Catatan Penting (*Important Note*)
+
+- AI bukan pengganti penelitian dan validasi biologis.
+- AI merupakan alat bantu komputasi yang dapat mendukung:
+  - Proses analisis data biologis.
+  - Prediksi karakteristik dan fenomena biologis.
+  - Identifikasi pola tersembunyi dalam data.
+  - Pengambilan keputusan dalam penelitian biologi.
+- Hasil yang diperoleh dari AI tetap harus diinterpretasikan dan divalidasi berdasarkan prinsip serta pengetahuan biologis.
