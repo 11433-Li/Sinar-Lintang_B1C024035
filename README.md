@@ -121,7 +121,7 @@ Kegiatan pembelajaran dilaksanakan melalui beberapa pendekatan:
 - **Project-Based Learning:** Pengembangan solusi berbasis AI untuk menyelesaikan permasalahan di bidang biologi.
 
 ## Topik Mata Kuliah
-- Pertemuan 11: Introduction AI in Biology
+- Pertemuan 11: [Introduction to AI in Biology](lectures/01-introduction-ai-in-biology/)
 - Pertemuan 12: Machine Learning Fundamental
 - Pertemuan 13: Deep Learning Basic
 - Pertemuan 14: Computer Vision in Biology
