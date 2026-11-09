@@ -9,7 +9,6 @@ Berdasarkan contoh yang telah dilakukan, kerjakan tugas berikut:
 - Jelaskan mengapa evaluasi model tidak cukup hanya menggunakan accuracy dalam konteks klasifikasi kanker.
 
 ## Expected Output
-
 Mahasiswa harus mengumpulkan:
 - Source code Python atau tautan Google Colab.
 - Hasil pengujian kedua algoritma.
@@ -18,7 +17,6 @@ Mahasiswa harus mengumpulkan:
 - Kesimpulan hasil eksperimen.
 
 ## Pengumpulan Mini Assignment melalui GitHub Pull Request (PR)
-
 Pengumpulan Mini Assignment dilakukan menggunakan mekanisme **GitHub Pull Request (PR)** melalui repository praktikum berikut:
 
 **Repository:** [uckypradestha/aibiology](https://github.com/uckypradestha/aibiology)
@@ -82,4 +80,12 @@ git add .
 git commit -m "Add mini assignment - Nama NIM"
 git push origin mini-assignment/nama-nim
 
-## Buat Pull Request
+### Ketentuan Tambahan
+1. Setiap mahasiswa wajib mengumpulkan tugas melalui akun GitHub masing-masing.
+2. Satu mahasiswa hanya diperbolehkan mengajukan satu Pull Request untuk Mini Assignment ini.
+3. Pengumpulan wajib menyertakan source code dan hasil eksekusi, bukan hanya kode program tanpa hasil.
+4. Notebook harus memiliki output hasil eksperimen yang dapat diperiksa.
+5. Hasil evaluasi harus berasal dari eksperimen yang benar-benar dilakukan, bukan angka yang dibuat atau disalin dari mahasiswa lain.
+6. Mahasiswa wajib memberikan analisis terhadap hasil klasifikasi, khususnya perbedaan precision dan recall dalam konteks deteksi kanker.
+7. Pull Request yang tidak mengikuti struktur pengumpulan dapat diminta untuk diperbaiki.
+8. Perbaikan dapat dilakukan dengan melakukan commit dan push kembali ke branch yang sama. Perubahan tersebut akan otomatis masuk ke Pull Request yang sudah diajukan.
