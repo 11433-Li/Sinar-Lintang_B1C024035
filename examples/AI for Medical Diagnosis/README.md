@@ -8,7 +8,7 @@ Pada contoh ini, kita akan mengembangkan model Machine Learning untuk mengklasif
 
 Pada tahap ini dilakukan evaluasi terhadap model Machine Learning menggunakan algoritma Logistic Regression. Evaluasi dilakukan untuk mengetahui kemampuan model dalam mengklasifikasikan tumor payudara ke dalam kategori Malignant (ganas) dan Benign (jinak).
 
-### 1 Informasi Dataset
+### 1. Informasi Dataset
 
 Berdasarkan hasil eksplorasi menggunakan Pandas, diperoleh informasi sebagai berikut:
 
@@ -23,7 +23,7 @@ Berdasarkan hasil eksplorasi menggunakan Pandas, diperoleh informasi sebagai ber
 
 Dataset memiliki 569 sampel dengan 30 fitur numerik. Seluruh fitur memiliki tipe data `float64` dan tidak ditemukan nilai yang hilang (*missing values*).
 
-### 2 Distribusi Kelas
+### 2. Distribusi Kelas
 
 Hasil pemeriksaan distribusi kelas menunjukkan jumlah sampel sebagai berikut:
 
@@ -37,7 +37,7 @@ Berdasarkan distribusi tersebut, jumlah sampel tumor jinak lebih banyak dibandin
 
 <img width="618" height="470" alt="image" src="https://github.com/user-attachments/assets/c57ed847-9b7a-442b-b34e-c5f7a7d8ffd0" />
 
-### 3 Pembagian Dataset
+### 3. Pembagian Dataset
 
 Dataset dibagi menjadi data training dan testing dengan proporsi 80:20.
 
@@ -49,7 +49,7 @@ Dataset dibagi menjadi data training dan testing dengan proporsi 80:20.
 
 Pembagian dilakukan menggunakan `train_test_split()` dengan parameter `stratify=y` untuk mempertahankan proporsi kelas pada data training dan testing.
 
-### 4 Hasil Evaluasi Model
+### 4. Hasil Evaluasi Model
 
 Setelah proses training menggunakan algoritma Logistic Regression, model diuji menggunakan 114 sampel data testing.
 
@@ -64,7 +64,7 @@ Nilai accuracy sebesar 98.25% menunjukkan bahwa model berhasil mengklasifikasika
 
 Sementara itu, nilai ROC-AUC sebesar 0.9954 menunjukkan kemampuan diskriminasi model yang sangat baik dalam membedakan kelas malignant dan benign pada data pengujian.
 
-### 5 Classification Report
+### 5. Classification Report
 
 Hasil evaluasi berdasarkan masing-masing kelas ditampilkan pada tabel berikut:
 
@@ -88,7 +88,7 @@ Pada kelas benign, model memperoleh precision, recall, dan F1-score sebesar 0.99
 
 Hasil tersebut menunjukkan bahwa model memiliki performa klasifikasi yang baik pada kedua kategori.
 
-### 7. Confusion Matrix
+### 6. Confusion Matrix
 
 Confusion Matrix merupakan tabel yang digunakan untuk membandingkan hasil prediksi model dengan kelas sebenarnya.
 
@@ -102,7 +102,7 @@ Confusion Matrix memiliki empat komponen utama:
 
 Pada dataset ini, kelas positif secara default adalah kelas 1 (Benign), sedangkan kelas negatif adalah kelas 0 (Malignant).
 
-### 6 Analisis Hasil Prediksi
+### 7. Analisis Hasil Prediksi
 
 Berdasarkan hasil perbandingan antara label prediksi (`y_pred`) dan label aktual (`y_test`), diperoleh:
 
@@ -124,7 +124,7 @@ Hasil ini menunjukkan bahwa terdapat 2 sampel yang mengalami kesalahan klasifika
 
 <img width="571" height="470" alt="image" src="https://github.com/user-attachments/assets/5286f52b-115c-4622-8020-8c0ea4e0f828" />
 
-### 7 Kesimpulan Eksperimen
+### 8. Kesimpulan Eksperimen
 
 Berdasarkan hasil eksperimen, dapat disimpulkan bahwa:
 
