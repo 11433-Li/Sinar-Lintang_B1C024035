@@ -38,7 +38,49 @@ Perkembangan AI dapat dipahami melalui beberapa tahapan utama:
 
 Perkembangan tersebut mendorong perubahan pendekatan penelitian biologi, dari analisis yang banyak bergantung pada pengamatan manual menuju pendekatan komputasional berbasis data.
 
-### Artificial Intelligence, Machine Learning, and Deep Learning
+## Mengapa Biologi Membutuhkan AI
+
+1. **Kompleksitas Sistem Biologis**
+
+- **Multiskala:** Sistem biologis memiliki struktur yang kompleks dan tersusun dalam berbagai tingkatan, mulai dari molekul → sel → jaringan → organisme → ekosistem.
+- **Variabilitas dan derau (noise) yang tinggi:** Data biologis memiliki tingkat variasi dan derau yang tinggi sehingga sulit dianalisis secara akurat.
+
+2. **Ledakan Data Biologis**
+
+- **Genomik:** Menghasilkan data dalam jumlah sangat besar, dengan miliaran basa DNA yang berhasil diurutkan (*sequenced*).
+- **Pencitraan Medis:** Menghasilkan data berukuran terabyte dari MRI, CT Scan, dan mikroskopi.
+- **Data Klinis:** Mencakup rekam medis elektronik (*Electronic Health Records* / EHR) dan data dari perangkat pemantau kesehatan (*wearable devices*).
+
+3. **Peran Artificial Intelligence (AI)**
+
+Metode analisis tradisional tidak lagi memadai untuk menangani kompleksitas dan volume data biologis yang terus meningkat. Oleh karena itu, **Artificial Intelligence (AI)** digunakan untuk membantu mengidentifikasi pola tersembunyi (*hidden patterns*) dan memperoleh informasi bermakna dari data biologis dalam jumlah besar.
+
+## Aplikasi Utama AI dalam Biologi
+
+1. **Genomik dan Bioinformatika**
+   - Identifikasi variasi genetik (*variant calling*).
+   - Anotasi genom (*genome annotation*).
+   - Prediksi ekspresi gen (*gene expression prediction*).
+   - AI membantu memetakan hubungan antara genotipe (*genotype*) dan fenotipe (*phenotype*).
+
+2. **Pencitraan Medis (*Medical Imaging*)**
+   - **Radiologi:**
+     - Deteksi kanker melalui citra CT Scan dan MRI.
+   - **Patologi:**
+     - Klasifikasi otomatis sampel jaringan biologis.
+
+3. **Penemuan Obat (*Drug Discovery*)**
+   - Penyaringan molekul secara virtual (*virtual screening*).
+   - Prediksi struktur protein, seperti yang dilakukan oleh AlphaFold.
+   - Pengembangan pendekatan pengobatan yang dipersonalisasi (*personalized medicine*).
+
+4. **Biologi Sistem (*Systems Biology*)**
+   - Pemodelan interaksi dalam jaringan biologis.
+   - Prediksi perilaku sistem biologis secara menyeluruh berdasarkan data molekuler.
+
+
+
+## Artificial Intelligence, Machine Learning, and Deep Learning
 
 Ketiga istilah ini saling berkaitan, tetapi memiliki cakupan dan karakteristik yang berbeda.
 
