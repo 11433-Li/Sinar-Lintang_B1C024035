@@ -79,8 +79,61 @@ Setelah seluruh pekerjaan selesai, lakukan commit dan push ke branch assignment 
 git add .
 git commit -m "Add mini assignment - Nama NIM"
 git push origin mini-assignment/nama-nim
+```
+**6. Buat Pull Request**
+- Buka repository hasil fork.
+- Pilih menu Contribute → Open pull request atau New Pull Request.
+- Pastikan target repository adalah repository utama uckypradestha/aibiology.
+- Pilih branch assignment sebagai source branch.
+- Isi judul dan deskripsi Pull Request sesuai ketentuan berikut.
 
-### Ketentuan Tambahan
+**Format judul Pull Request:**
+
+`[Mini Assignment] Nama Lengkap - NIM`
+
+Contoh:
+
+`[Mini Assignment] Ucky Pradestha - H1D022001`
+
+**Format deskripsi Pull Request:**
+
+Gunakan template berikut pada deskripsi PR:
+
+```
+## Identitas Mahasiswa
+- Nama:
+- NIM:
+- Kelas:
+
+## Deskripsi Assignment
+Implementasi dan perbandingan algoritma Logistic Regression dan Random Forest Classifier untuk klasifikasi kanker.
+
+## Eksperimen
+- [x] Pembagian dataset 70% training dan 30% testing
+- [x] Implementasi Logistic Regression
+- [x] Implementasi Random Forest Classifier
+- [x] Perbandingan accuracy, precision, recall, dan F1-score
+- [x] Confusion Matrix kedua algoritma
+- [x] Analisis hasil eksperimen
+- [x] Kesimpulan
+
+## File Pengumpulan
+- Source code:
+- Hasil eksperimen:
+- Dokumentasi:
+
+## Pernyataan
+Saya menyatakan bahwa pekerjaan ini merupakan hasil pengerjaan dan pemahaman saya sendiri.
+```
+
+**7. Submit Pull Request**
+- Periksa kembali seluruh file yang dikumpulkan.
+- Pastikan notebook dapat dijalankan tanpa error.
+- Klik Create Pull Request.
+- Pastikan status Pull Request terbuka (Open) dan bukan Draft.
+- Jangan melakukan merge secara mandiri. Proses pemeriksaan dan merge dilakukan oleh dosen/asisten praktikum
+
+## Ketentuan Tambahan
 1. Setiap mahasiswa wajib mengumpulkan tugas melalui akun GitHub masing-masing.
 2. Satu mahasiswa hanya diperbolehkan mengajukan satu Pull Request untuk Mini Assignment ini.
 3. Pengumpulan wajib menyertakan source code dan hasil eksekusi, bukan hanya kode program tanpa hasil.
@@ -89,3 +142,36 @@ git push origin mini-assignment/nama-nim
 6. Mahasiswa wajib memberikan analisis terhadap hasil klasifikasi, khususnya perbedaan precision dan recall dalam konteks deteksi kanker.
 7. Pull Request yang tidak mengikuti struktur pengumpulan dapat diminta untuk diperbaiki.
 8. Perbaikan dapat dilakukan dengan melakukan commit dan push kembali ke branch yang sama. Perubahan tersebut akan otomatis masuk ke Pull Request yang sudah diajukan.
+
+## Ketentuan Pengumpulan melalui LMS ELDIRU
+
+Selain mengajukan Pull Request (PR) ke repository GitHub utama, setiap mahasiswa **wajib mengumpulkan tugas melalui LMS eLdiru** pada kolom penugasan sebagai bukti pengumpulan resmi mini project.
+
+Ketentuan pengumpulan:
+
+1. Mahasiswa wajib mengunggah file notebook (`.ipynb`) yang telah dikerjakan dan dilengkapi dengan hasil eksekusi ke LMS eLdiru.
+2. Mahasiswa wajib menyertakan tautan Pull Request (PR) GitHub yang telah diajukan ke repository utama.
+3. Pastikan tautan PR dapat diakses dan mengarah ke Pull Request masing-masing mahasiswa.
+4. Pastikan file yang diunggah ke LMS eLdiru merupakan versi terbaru yang sama dengan file pada repository GitHub.
+5. Pengumpulan melalui GitHub PR dan LMS eLdiru **keduanya wajib dilakukan**.
+6. Tugas dinyatakan lengkap apabila mahasiswa telah mengumpulkan file melalui LMS eLdiru dan berhasil mengajukan Pull Request ke repository utama.
+7. Pengumpulan yang hanya dilakukan melalui salah satu platform dianggap belum memenuhi ketentuan pengumpulan.
+
+**File yang dikumpulkan melalui LMS eLdiru:**
+
+- File notebook (`.ipynb`) yang berisi source code dan hasil eksperimen.
+- Tautan Pull Request (PR) GitHub masing-masing mahasiswa.
+
+**Catatan:** Pastikan pengumpulan pada LMS eLdiru dilakukan sebelum tenggat waktu yang telah ditentukan.
+
+## Aspek Penilaian
+| No. | Komponen Penilaian                                      | Bobot |
+|:---:|---------------------------------------------------------|:-----:|
+| 1   | Implementasi Logistic Regression dan Random Forest      | 20%  |
+| 2   | Pembagian dataset dan proses eksperimen                 | 10%  |
+| 3   | Evaluasi accuracy, precision, recall, dan F1-score      | 20%  |
+| 4   | Confusion Matrix kedua algoritma                        | 15%  |
+| 5   | Analisis dan interpretasi hasil eksperimen              | 20%  |
+| 6   | Dokumentasi dan kerapian repository GitHub              | 10%  |
+| 7   | Kepatuhan terhadap prosedur Pull Request                | 5%   |
+|     | **Total**                                               | **100%** |
