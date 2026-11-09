@@ -114,3 +114,136 @@ Contoh dalam biologi:
 - Analisis sekuens biologis.
 - Prediksi struktur protein.
 
+Secara konseptual, Deep Learning merupakan bagian dari Machine Learning, sedangkan Machine Learning merupakan bagian dari Artificial Intelligence.
+
+
+## Kategori Machine Learning Berdasarkan Pendekatan Pembelajaran
+
+Berdasarkan pendekatan pembelajarannya, *Machine Learning* secara umum dibagi menjadi tiga kategori utama:
+
+### A. Supervised Learning
+
+*Supervised Learning* merupakan metode pembelajaran mesin yang menggunakan data berlabel (*labeled data*).
+
+- Model dilatih menggunakan pasangan data:
+  - **Input:** Data masukan yang digunakan untuk proses pembelajaran.
+  - **Target Output:** Label atau nilai target yang ingin diprediksi.
+- Model mempelajari hubungan antara input dan target output untuk menghasilkan prediksi terhadap data baru.
+
+Dua permasalahan utama dalam *Supervised Learning*:
+
+1. **Classification**
+   - Digunakan untuk memprediksi kategori atau kelas suatu data.
+   - Contoh penerapan:
+     - Mengklasifikasikan daun menjadi sehat atau sakit.
+     - Mengidentifikasi jenis spesies tanaman.
+     - Mengklasifikasikan citra jaringan menjadi jaringan normal atau abnormal.
+
+2. **Regression**
+   - Digunakan untuk memprediksi nilai numerik atau kontinu.
+   - Contoh penerapan:
+     - Memprediksi tinggi tanaman.
+     - Memperkirakan konsentrasi suatu senyawa.
+     - Memprediksi tingkat pertumbuhan organisme.
+
+### B. Unsupervised Learning
+
+*Unsupervised Learning* merupakan metode pembelajaran mesin yang menggunakan data tanpa label (*unlabeled data*).
+
+- Tujuan utama:
+  - Menemukan pola tersembunyi dalam data.
+  - Mengidentifikasi struktur atau hubungan dalam data.
+  - Mengelompokkan data berdasarkan kemiripan karakteristik.
+- Contoh penerapan:
+  - Mengelompokkan spesies berdasarkan karakteristik biologis.
+  - Mengidentifikasi kelompok gen berdasarkan pola ekspresi.
+  - Mengelompokkan sampel biologis berdasarkan kemiripan karakteristik.
+- Salah satu metode yang sering digunakan:
+  - **Clustering:** Mengelompokkan data berdasarkan kemiripan karakteristik.
+    - Contoh algoritma: K-Means.
+
+### C. Reinforcement Learning
+
+*Reinforcement Learning* merupakan pendekatan pembelajaran mesin yang melibatkan interaksi antara agen (*agent*) dan lingkungan (*environment*).
+
+- Proses pembelajaran:
+  - Agen melakukan tindakan (*action*) terhadap lingkungan.
+  - Lingkungan memberikan umpan balik (*feedback*).
+  - Umpan balik diberikan dalam bentuk:
+    - **Reward:** Penghargaan atas tindakan yang tepat.
+    - **Penalty:** Hukuman atas tindakan yang kurang tepat.
+  - Agen mempelajari strategi untuk memperoleh reward maksimal.
+- Contoh penerapan dalam biologi:
+  - Optimasi strategi eksperimen biologis.
+  - Optimasi proses desain molekul.
+  - Pengembangan strategi pengendalian dalam sistem biologis.
+
+## Tahapan Kerja AI dalam Aplikasi Biologi
+
+Secara umum, penerapan *Artificial Intelligence* (AI) dalam bidang biologi melibatkan beberapa tahapan utama sebagai berikut:
+
+### 1. Data Collection (Pengumpulan Data)
+
+Mengumpulkan data biologis sesuai dengan permasalahan yang akan diselesaikan.
+
+- Contoh pengumpulan data:
+  - Mengumpulkan citra daun tanaman.
+  - Mengambil sampel sekuens DNA.
+  - Mengumpulkan data pertumbuhan tanaman.
+
+### 2. Data Preprocessing (Prapemrosesan Data)
+
+Melakukan persiapan dan pengolahan data sebelum digunakan untuk melatih model AI.
+
+- Tahapan prapemrosesan:
+  - Membersihkan data yang tidak valid.
+  - Menangani data yang hilang (*missing values*).
+  - Melakukan normalisasi data (*normalization*).
+  - Mengubah ukuran citra (*image resizing*).
+  - Melakukan anotasi dan pelabelan data (*data annotation and labeling*).
+
+### 3. Feature Extraction (Ekstraksi Fitur)
+
+Mengidentifikasi atau mengekstraksi karakteristik penting dari data biologis yang digunakan dalam proses pembelajaran model.
+
+- Contoh fitur biologis:
+  - Warna, tekstur, dan bentuk daun.
+  - Kandungan atau komposisi sekuens biologis.
+  - Karakteristik ekspresi gen.
+- Pada pendekatan *Deep Learning*:
+  - Ekstraksi fitur dapat dipelajari secara otomatis oleh model.
+  - Model mampu mempelajari representasi fitur dari data tanpa harus menentukannya secara manual.
+
+### 4. Model Training (Pelatihan Model)
+
+Melatih model AI menggunakan data yang telah dipersiapkan untuk mempelajari pola dan hubungan dalam data biologis.
+
+- Contoh algoritma yang digunakan:
+  - **Decision Tree**
+  - **Random Forest**
+  - **Support Vector Machine (SVM)**
+  - **K-Nearest Neighbors (KNN)**
+  - **Artificial Neural Network (ANN)**
+  - **Convolutional Neural Network (CNN)**
+
+### 5. Model Evaluation (Evaluasi Model)
+
+Mengevaluasi performa model menggunakan data pengujian (*testing data*) yang tidak digunakan selama proses pelatihan.
+
+- Metrik evaluasi yang umum digunakan:
+  - **Accuracy:** Mengukur proporsi prediksi yang benar.
+  - **Precision:** Mengukur ketepatan prediksi pada kelas positif.
+  - **Recall:** Mengukur kemampuan model dalam menemukan seluruh data positif.
+  - **F1-Score:** Mengukur keseimbangan antara precision dan recall.
+  - **Confusion Matrix:** Menampilkan perbandingan hasil prediksi dengan kelas sebenarnya.
+  - **Mean Squared Error (MSE):** Mengukur rata-rata kuadrat kesalahan prediksi.
+- Pemilihan metrik evaluasi harus disesuaikan dengan karakteristik permasalahan biologis yang diteliti.
+
+### 6. Prediction and Interpretation (Prediksi dan Interpretasi)
+
+Menggunakan model yang telah dilatih dan dievaluasi untuk menghasilkan prediksi serta menginterpretasikan hasilnya dalam konteks biologis.
+
+- Contoh penerapan:
+  - Mengidentifikasi jenis penyakit tanaman.
+  - Mengklasifikasikan jenis sel.
+  - Memprediksi karakteristik suatu protein.
