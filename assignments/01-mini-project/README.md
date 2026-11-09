@@ -1,4 +1,4 @@
-# Mini Assignment
+# 📄 Mini Assignment
 
 Berdasarkan contoh yang telah dilakukan, kerjakan tugas berikut:
 - Ubah pembagian dataset menjadi 70% training dan 30% testing.
@@ -50,6 +50,10 @@ Contoh:
 - Sertakan hasil evaluasi, Confusion Matrix, serta analisis perbandingan kedua algoritma.
 
 **4. Struktur File Pengumpulan**
+
+Seluruh file Mini Assignment wajib ditempatkan pada direktori berikut di repository hasil fork masing-masing:
+
+`assignments/01-mini-project/`
 
 Simpan hasil pekerjaan pada folder berikut:
 
@@ -165,13 +169,8 @@ Ketentuan pengumpulan:
 **Catatan:** Pastikan pengumpulan pada LMS eLdiru dilakukan sebelum tenggat waktu yang telah ditentukan.
 
 ## Aspek Penilaian
-| No. | Komponen Penilaian                                      | Bobot |
-|:---:|---------------------------------------------------------|:-----:|
-| 1   | Implementasi Logistic Regression dan Random Forest      | 20%  |
-| 2   | Pembagian dataset dan proses eksperimen                 | 10%  |
-| 3   | Evaluasi accuracy, precision, recall, dan F1-score      | 20%  |
-| 4   | Confusion Matrix kedua algoritma                        | 15%  |
-| 5   | Analisis dan interpretasi hasil eksperimen              | 20%  |
-| 6   | Dokumentasi dan kerapian repository GitHub              | 10%  |
-| 7   | Kepatuhan terhadap prosedur Pull Request                | 5%   |
-|     | **Total**                                               | **100%** |
+| No. | Komponen Penilaian | Bobot |
+|:---:|---|:---:|
+| 1 | Kesesuaian hasil pengerjaan dengan luaran yang diminta | 50% |
+| 2 | Kelengkapan Dokumentasi dan kerapihan struktur file serta kepatuhan terhadap prosedur pengumpulan melalui GitHub Pull Request dan LMS ELDIRU. | 50% |
+| | **Total** | **100%** |
