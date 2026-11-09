@@ -78,8 +78,6 @@ Metode analisis tradisional tidak lagi memadai untuk menangani kompleksitas dan 
    - Pemodelan interaksi dalam jaringan biologis.
    - Prediksi perilaku sistem biologis secara menyeluruh berdasarkan data molekuler.
 
-
-
 ## Artificial Intelligence, Machine Learning, and Deep Learning
 
 Ketiga istilah ini saling berkaitan, tetapi memiliki cakupan dan karakteristik yang berbeda.
@@ -116,6 +114,31 @@ Contoh dalam biologi:
 
 Secara konseptual, Deep Learning merupakan bagian dari Machine Learning, sedangkan Machine Learning merupakan bagian dari Artificial Intelligence.
 
+## Memahami Dasar Dataset Biologi Sederhana
+Berikut contoh dataset sederhana yang berisi karakteristik pengukuran tanaman.
+
+```python
+import pandas as pd
+
+data = {
+    'temperature': [25, 28, 30, 26, 29],
+    'humidity': [80, 75, 65, 85, 70],
+    'plant_height': [10, 15, 20, 12, 18],
+    'growth_status': [
+        'Normal',
+        'Normal',
+        'Poor',
+        'Normal',
+        'Poor'
+    ]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+```
+
+Selengkapnya dapat diakses melalui [Google Colab](https://colab.research.google.com/drive/1oZG72S5U_3OJxw6m5Y7SIHxyEJDzpvR1?usp=sharing)
 
 ## Kategori Machine Learning Berdasarkan Pendekatan Pembelajaran
 
