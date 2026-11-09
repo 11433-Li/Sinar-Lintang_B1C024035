@@ -277,6 +277,8 @@ Pada contoh ini, kita akan mengembangkan model Machine Learning untuk mengklasif
 
 Dataset yang digunakan adalah [**Breast Cancer Wisconsin Dataset**](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic) yang tersedia secara langsung melalui library Scikit-learn.
 
+Klasifikasi Breast Cancer Menggunakan Machine Learning selengkapnya dapat diakses melalui [AI for Medical Diagnosis](https://github.com/uckypradestha/aibiology/tree/main/examples/AI%20for%20Medical%20Diagnosis)
+
 ## Tantangan dan Keterbatasan AI dalam Biologi
 
 Meskipun memiliki potensi besar, penerapan *Artificial Intelligence* (AI) dalam bidang biologi masih menghadapi sejumlah tantangan dan keterbatasan.
