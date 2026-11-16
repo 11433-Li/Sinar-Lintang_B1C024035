@@ -16,21 +16,6 @@ Secara lebih lengkap code dapat diakses melalui:
 4. Pastikan **koneksi internet aktif**, karena dataset diunduh otomatis dari repositori UCI.
 5. Jalankan seluruh sel secara berurutan: menu **Runtime → Run all** (atau tekan `Ctrl + F9`). Anda juga bisa menjalankan sel satu per satu dengan `Shift + Enter` sambil membaca penjelasannya.
 6. Jika muncul peringatan *"This notebook was not authored by Google"*, pilih **Run anyway**.
-7. Kerjakan **Soal Latihan** di bagian akhir notebook, lalu kumpulkan sesuai instruksi dosen.
-
-> **Tips:** jalankan sel **dari atas ke bawah secara berurutan**. Jika Anda melompati sel, variabel yang dibutuhkan sel berikutnya belum terdefinisi dan akan muncul pesan `NameError`.
-
----
-
-## 🎯 Capaian Pembelajaran
-
-Setelah menyelesaikan praktik ini, mahasiswa mampu:
-
-1. Memahami alur kerja (*pipeline*) Machine Learning untuk data tabular biologi/medis.
-2. Melakukan eksplorasi data (EDA), menangani *missing value*, dan melakukan *preprocessing*.
-3. Membandingkan beberapa algoritma klasifikasi dengan *stratified cross-validation*.
-4. Mengevaluasi model dengan metrik yang tepat untuk konteks medis (accuracy, precision, **recall**, F1, ROC-AUC).
-5. Menafsirkan fitur yang paling berpengaruh terhadap prediksi.
 
 ---
 
