@@ -2,7 +2,7 @@
 
 ## 1. Deskripsi
 
-Setiap kelompok (2-3 orang) merancang dan menyelesaikan **satu proyek ML end-to-end** pada dataset biologi/biomedis. Proyek harus mencakup **minimal satu pendekatan supervised** dan **satu pendekatan unsupervised**, serta interpretasi biologisnya.
+Merupakan tugas kelompok. Setiap kelompok merancang dan menyelesaikan **satu proyek ML end-to-end** pada dataset biologi/biomedis. Proyek harus mencakup **minimal satu pendekatan supervised** dan **satu pendekatan unsupervised**, serta interpretasi biologisnya.
 
 ## 2. Pilihan Dataset
 
