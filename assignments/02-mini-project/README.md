@@ -1,10 +1,10 @@
 # Mini Project: Machine Learning untuk Biologi
 
-## 1 Deskripsi
+## 1. Deskripsi
 
 Setiap kelompok (2-3 orang) merancang dan menyelesaikan **satu proyek ML end-to-end** pada dataset biologi/biomedis. Proyek harus mencakup **minimal satu pendekatan supervised** dan **satu pendekatan unsupervised**, serta interpretasi biologisnya.
 
-## 2 Pilihan Dataset
+## 2. Pilihan Dataset
 
 | # | Dataset | Sumber | Deskripsi | Tugas Supervised | Tugas Unsupervised |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@ Setiap kelompok (2-3 orang) merancang dan menyelesaikan **satu proyek ML end-to-
 
 > Dataset yang sudah dipakai di kelas (Breast Cancer Wisconsin) **tidak boleh** dijadikan dataset utama proyek.
 
-## 3 Tahapan Pengerjaan
+## 3. Tahapan Pengerjaan
 
 **Tahap 1: Pendefinisian Masalah**
 - Tuliskan pertanyaan biologis/klinis dan mengapa penting.
@@ -49,7 +49,7 @@ Setiap kelompok (2-3 orang) merancang dan menyelesaikan **satu proyek ML end-to-
 **Tahap 7: Diskusi dan Keterbatasan**
 - Kelemahan data, risiko bias/leakage/overfitting, dan saran pengembangan.
 
-## 4 Template Awal (Contoh dengan Palmer Penguins)
+## 4. Template Awal (Contoh dengan Palmer Penguins)
 
 ```python
 import numpy as np, pandas as pd, matplotlib.pyplot as plt, seaborn as sns
@@ -114,7 +114,7 @@ sns.scatterplot(x=Xp[:, 0], y=Xp[:, 1], hue=km.labels_, palette="viridis", ax=ax
 plt.show()
 ```
 
-## 5 Deliverables
+## 5. Deliverables
 
 | Deliverable | Format | Keterangan |
 |---|---|---|
@@ -123,7 +123,7 @@ plt.show()
 | **Repositori GitHub** | Link | Struktur rapi: `data/`, `notebooks/`, `README.md`, `requirements.txt` |
 | **Presentasi** | 5-7 menit | Ringkas dan fokus pada temuan serta interpretasi biologis |
 
-## 6 Rubrik Penilaian
+## 6. Rubrik Penilaian
 
 ## Aspek Penilaian
 | No. | Komponen Penilaian | Bobot |
@@ -132,7 +132,7 @@ plt.show()
 | 2 | Kesesuaian instruksi dan format pengumpulan | 50% |
 | | **Total** | **100%** |
 
-## 7 Tips
+## 7. Tips
 
 - Mulai dari **baseline sederhana**. Model kompleks tidak selalu lebih baik.
 - Selalu tetapkan `random_state` agar hasil bisa direproduksi.
