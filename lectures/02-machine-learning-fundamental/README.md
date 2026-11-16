@@ -207,6 +207,7 @@ Sumber dataset:
 - UCI Machine Learning Repository: https://archive.ics.uci.edu/
 - Scikit-learn Dataset: https://scikit-learn.org/stable/datasets.html
 - NCBI: https://www.ncbi.nlm.nih.gov/
+- Mendeley: https://data.mendeley.com/
 
 ### 3. Data Understanding
 
