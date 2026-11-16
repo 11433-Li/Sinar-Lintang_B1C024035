@@ -11,11 +11,9 @@ Materi praktik penerapan Machine Learning pada **data biologi/medis**: mempredik
 
 Seluruh praktik dikerjakan di **Google Colab**, sehingga tidak perlu menginstal Python atau library apa pun di komputer Anda.
 
-### 👉 [Buka Notebook di Google Colab](https://drive.google.com/file/d/1kFMfrEJkh6z0TADJWLXMoQs9J2ne67DH/view?usp=sharing)
+👉 [Buka Notebook di Google Colab](https://drive.google.com/file/d/1kFMfrEJkh6z0TADJWLXMoQs9J2ne67DH/view?usp=sharing)
 
-> **Catatan untuk dosen:** ganti `GANTI_DENGAN_TAUTAN_COLAB` di atas dengan tautan notebook Anda. Cara mendapatkannya ada di bagian [Cara Membagikan Tautan](#cara-membagikan-tautan-untuk-dosen) di bawah.
-
-### Langkah-langkah untuk mahasiswa
+### Langkah-langkah
 
 1. **Klik tautan Colab** di atas. Notebook akan terbuka di browser.
 2. **Login** dengan akun Google Anda (akun pribadi atau akun kampus).
