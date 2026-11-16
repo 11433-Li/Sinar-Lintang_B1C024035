@@ -2,16 +2,11 @@
 
 Materi praktik penerapan Machine Learning pada **data biologi/medis**: memprediksi apakah seorang pasien menderita penyakit jantung berdasarkan data klinisnya.
 
-**Mata Kuliah:** Machine Learning / Pengenalan Pola  
-**Program Studi:** Teknik Komputer, Universitas Jenderal Soedirman
-
----
-
 ## 🚀 Mulai di Google Colab
 
-Seluruh praktik dikerjakan di **Google Colab**, sehingga tidak perlu menginstal Python atau library apa pun di komputer Anda.
+Secara lebih lengkap code dapat diakses melalui:
 
-👉 [Buka Notebook di Google Colab]([https://drive.google.com/file/d/1kFMfrEJkh6z0TADJWLXMoQs9J2ne67DH/view?usp=sharing](https://drive.google.com/file/d/1kFMfrEJkh6z0TADJWLXMoQs9J2ne67DH/view?usp=sharing))
+👉 [[Buka Notebook di Google Colab]((https://drive.google.com/file/d/1kFMfrEJkh6z0TADJWLXMoQs9J2ne67DH/view?usp=sharing))](https://drive.google.com/file/d/1kFMfrEJkh6z0TADJWLXMoQs9J2ne67DH/view?usp=sharing)
 
 ### Langkah-langkah
 
