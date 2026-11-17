@@ -162,35 +162,15 @@ Beberapa algoritma:
 
 Pengembangan model Machine Learning umumnya dilakukan melalui beberapa tahapan.
 
-```text
-Problem Definition
-        |
-        v
-Data Collection
-        |
-        v
-Data Understanding
-        |
-        v
-Data Preprocessing
-        |
-        v
-Feature Selection
-        |
-        v
-Model Development
-        |
-        v
-Model Training
-        |
-        v
-Model Evaluation
-        |
-        v
-Interpretation & Deployment
+```
+1. Definisikan masalah  ->  2. Kumpulkan data  ->  3. Eksplorasi data (EDA)
+                                                           |
+6. Latih Model  <-  5. Feature Selection  <-  4. Preprocessing
+                |
+        7. Evaluasi & interpretasi
 ```
 
-### 1. Problem Definition
+### 1. Problem Definition (Definisi masalah)
 
 Menentukan permasalahan yang akan diselesaikan menggunakan Machine Learning.
 
@@ -198,7 +178,7 @@ Contoh:
 - Apakah suatu sampel termasuk spesies Setosa, Versicolor, atau Virginica?
 - Bagaimana mengelompokkan sampel biologis berdasarkan karakteristiknya?
 
-### 2. Data Collection
+### 2. Data Collection (Kumpulkan data)
 
 Mengumpulkan data yang relevan dengan permasalahan.
 
@@ -207,8 +187,9 @@ Sumber dataset:
 - UCI Machine Learning Repository: https://archive.ics.uci.edu/
 - Scikit-learn Dataset: https://scikit-learn.org/stable/datasets.html
 - NCBI: https://www.ncbi.nlm.nih.gov/
+- Mendeley: https://data.mendeley.com/
 
-### 3. Data Understanding
+### 3. Data Understanding (Eksplorasi data)
 
 Memahami karakteristik dataset, meliputi:
 - Jumlah data.
@@ -242,35 +223,133 @@ Contoh pada dataset Iris:
 
 ### 6. Model Training
 
-Pada tahap ini, algoritma Machine Learning mempelajari pola berdasarkan data yang diberikan.
+Pada tahap ini, algoritma Machine Learning mempelajari pola berdasarkan data yang diberikan dan atur Hyperparameter nya.
 
 ### 7. Model Evaluation
 
 Model dievaluasi untuk mengetahui kemampuan dalam menyelesaikan permasalahan.
 
-Untuk Classification, metrik evaluasi yang umum digunakan:
-- Accuracy.
-- Precision.
-- Recall.
-- F1-Score.
-- Confusion Matrix.
+### 7.1 Klasifikasi: Confusion Matrix
 
-Untuk Regression:
-- Mean Absolute Error (MAE).
-- Mean Squared Error (MSE).
-- Root Mean Squared Error (RMSE).
-- R-squared (R²).
+|  | Prediksi Positif | Prediksi Negatif |
+|---|---|---|
+| **Aktual Positif** | TP (True Positive) | FN (False Negative) |
+| **Aktual Negatif** | FP (False Positive) | TN (True Negative) |
+
+| Metrik | Rumus | Pertanyaan yang Dijawab |
+|---|---|---|
+| **Accuracy** | (TP+TN) / total | Seberapa sering model benar secara keseluruhan? |
+| **Precision** | TP / (TP+FP) | Dari semua yang diprediksi positif, berapa yang benar-benar positif? |
+| **Recall (Sensitivity)** | TP / (TP+FN) | Dari semua yang benar-benar positif, berapa yang berhasil terdeteksi? |
+| **Specificity** | TN / (TN+FP) | Dari semua yang negatif, berapa yang terdeteksi negatif? |
+| **F1-score** | 2·P·R / (P+R) | Rata-rata harmonik precision dan recall |
+| **ROC-AUC** | Luas di bawah kurva ROC | Kemampuan model membedakan dua kelas di semua threshold |
+
+### Mana yang Penting di Biologi/Medis?
+
+- **Skrining penyakit serius** (misalnya kanker): **Recall tinggi** sangat penting. *False negative* (pasien sakit dinyatakan sehat) berbahaya.
+- **Konfirmasi sebelum terapi mahal/invasif**: **Precision tinggi** lebih diprioritaskan.
+- **Data tidak seimbang** (misalnya 2% sampel positif): **accuracy menyesatkan**. Model yang selalu menebak "negatif" tetap akurat 98%. Gunakan F1, recall, PR-AUC.
+
+> **Perhatian pada dataset Breast Cancer di scikit-learn:** label `0 = malignant` dan `1 = benign`. Jika ingin menghitung recall untuk kelas **ganas**, gunakan `pos_label=0`.
+
+### 7.2 Regresi
+
+| Metrik | Arti |
+|---|---|
+| **MAE** | Rata-rata selisih absolut prediksi dan nilai aktual (satuan sama dengan target) |
+| **RMSE** | Akar rata-rata kuadrat error; lebih menghukum error besar |
+| **R²** | Proporsi variasi target yang dijelaskan model (1 = sempurna, 0 = setara menebak rata-rata) |
+
+---
 
 Untuk Clustering:
 - Silhouette Score.
 - Davies-Bouldin Index.
 - Calinski-Harabasz Index.
 
----
+## Konsep Fundamental
 
-# Supervised Learning: K-Nearest Neighbors (KNN)
+### 1 Train/Test Split
 
-## 1. Concept of KNN
+Model harus diuji pada data yang **belum pernah dilihat** saat training. Jika tidak, kita tidak tahu apakah model benar-benar belajar pola atau hanya menghafal.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.2,      # 20% untuk testing
+    stratify=y,         # menjaga proporsi kelas (penting untuk data medis)
+    random_state=42     # agar hasil reproducible
+)
+```
+
+### 2 Overfitting dan Underfitting
+
+| Kondisi | Ciri | Penyebab Umum | Solusi |
+|---|---|---|---|
+| **Underfitting** | Skor buruk di train **dan** test | Model terlalu sederhana | Model lebih kompleks, tambah fitur |
+| **Good fit** | Skor baik dan dekat antara train dan test | - | - |
+| **Overfitting** | Skor train sangat tinggi, test jauh lebih rendah | Model terlalu kompleks / data sedikit | Regularisasi, lebih banyak data, model lebih sederhana, cross-validation |
+
+> **Analogi:** mahasiswa yang hanya menghafal kunci jawaban latihan soal (overfitting) akan gagal ketika soal ujian berbeda.
+
+### 3 Bias-Variance Tradeoff
+
+- **Bias tinggi**: model terlalu sederhana, asumsinya terlalu kuat (underfitting).
+- **Variance tinggi**: model terlalu sensitif terhadap data training (overfitting).
+- Tujuannya adalah menemukan **keseimbangan** keduanya.
+
+### 4 Cross-Validation (K-Fold)
+
+Satu kali split bisa kebetulan "beruntung" atau "sial", terutama pada dataset biologi yang kecil. **K-Fold CV** membagi data menjadi *k* bagian dan bergantian memakai satu bagian sebagai validasi.
+
+```
+Fold 1: [TEST ][train][train][train][train]
+Fold 2: [train][TEST ][train][train][train]
+Fold 3: [train][train][TEST ][train][train]
+Fold 4: [train][train][train][TEST ][train]
+Fold 5: [train][train][train][train][TEST ]
+```
+
+```python
+from sklearn.model_selection import cross_val_score, StratifiedKFold
+
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(model, X_train, y_train, cv=cv, scoring="roc_auc")
+print(f"ROC-AUC: {scores.mean():.3f} ± {scores.std():.3f}")
+```
+
+### 5 Feature Scaling
+
+Algoritma berbasis **jarak** atau **gradien** (KNN, SVM, Logistic Regression, K-Means, PCA) sensitif terhadap skala fitur. Misalnya `area` (ratusan) akan mendominasi `smoothness` (0.0x) jika tidak diskalakan.
+
+- **StandardScaler**: rata-rata 0, standar deviasi 1.
+- **MinMaxScaler**: rentang 0 sampai 1.
+- Algoritma berbasis pohon (Decision Tree, Random Forest) **tidak membutuhkan** scaling.
+
+### 6 Data Leakage (Kebocoran Data)
+
+Kesalahan fatal ketika informasi dari data test "bocor" ke proses training.
+
+```python
+# SALAH: scaler melihat seluruh data (termasuk data test)
+X_scaled = StandardScaler().fit_transform(X)
+X_train, X_test = train_test_split(X_scaled, ...)
+
+# BENAR: gunakan Pipeline, scaler hanya belajar dari data training
+from sklearn.pipeline import make_pipeline
+model = make_pipeline(StandardScaler(), LogisticRegression())
+model.fit(X_train, y_train)
+```
+
+> **Aturan emas:** semua langkah preprocessing yang "belajar" dari data (scaling, imputasi, seleksi fitur, PCA) harus di-*fit* hanya pada data training. Pakai `Pipeline` untuk ini.
+
+
+## Supervised Learning: K-Nearest Neighbors (KNN)
+
+### 1. Concept of KNN
 
 K-Nearest Neighbors (KNN) merupakan algoritma Supervised Learning yang dapat digunakan untuk Classification maupun Regression.
 
@@ -286,7 +365,7 @@ Jika K = 3, kemudian dari tiga tetangga terdekat diperoleh:
 
 Maka data baru akan diklasifikasikan sebagai kelas A.
 
-## 2. Euclidean Distance
+### 2. Euclidean Distance
 
 KNN umumnya menggunakan Euclidean Distance untuk menghitung jarak antara dua data.
 
@@ -302,7 +381,7 @@ Keterangan:
 - $y_i$ : Nilai fitur data kedua.
 - $n$ : Jumlah fitur.
 
-## 3. KNN Implementation Using Python
+### 3. KNN Implementation Using Python
 
 Pada contoh ini digunakan dataset Iris dari Scikit-learn.
 
@@ -1261,59 +1340,7 @@ Pertanyaan analisis:
 
 ---
 
-# Mini Project: Machine Learning for Biological Data
-
-## Project: Biological Data Pattern Analysis
-
-### Description
-
-Mahasiswa diminta mengembangkan model Machine Learning sederhana untuk menganalisis dataset biologis menggunakan pendekatan Supervised Learning dan Unsupervised Learning.
-
-Dataset dapat dipilih dari sumber publik seperti:
-
-- UCI Machine Learning Repository.
-- Kaggle.
-- Scikit-learn Dataset.
-- Dataset publik bidang bioinformatika.
-
-### Project Topics
-
-| Topic | Dataset / Object | Approach |
-|---|---|---|
-| Klasifikasi spesies bunga | Iris Dataset | Supervised |
-| Klasifikasi spesies penguin | Palmer Penguins | Supervised |
-| Pengelompokan spesies bunga | Iris Dataset tanpa label | Unsupervised |
-| Pengelompokan sampel biologis | Gene Expression Dataset | Unsupervised |
-| Pengelompokan karakteristik tanaman | Plant Dataset | Unsupervised |
-
-### Project Requirements
-
-Mahasiswa harus melakukan:
-
-1. Identifikasi permasalahan.
-2. Pemilihan dataset.
-3. Eksplorasi dan visualisasi data.
-4. Data preprocessing.
-5. Implementasi minimal dua algoritma Machine Learning.
-6. Evaluasi performa model.
-7. Perbandingan hasil algoritma.
-8. Interpretasi hasil berdasarkan konteks biologis.
-
-### Project Deliverables
-
-Laporan dan notebook Python yang berisi:
-
-- Deskripsi permasalahan.
-- Informasi dataset.
-- Tahapan preprocessing.
-- Implementasi algoritma.
-- Hasil evaluasi.
-- Visualisasi.
-- Analisis dan kesimpulan.
-
----
-
-# References
+## References
 
 1. Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer.
 2. Géron, A. (2022). *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* (3rd Edition). O'Reilly Media.
