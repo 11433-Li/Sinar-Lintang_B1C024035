@@ -82,6 +82,8 @@ dari cara neuron saling terhubung. ANN tersusun atas neuron-neuron
 buatan yang menerima masukan, mengalikannya dengan bobot, menambahkan
 bias, kemudian menerapkan fungsi aktivasi.
 
+<img width="1120" height="542" alt="image" src="https://github.com/user-attachments/assets/87aef117-36ac-4efe-bf2b-c4707155e08e" />
+
 Jaringan saraf sederhana umumnya terdiri dari:
 
 -   **Input layer:** menerima fitur dari data.
