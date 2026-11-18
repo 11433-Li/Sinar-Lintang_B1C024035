@@ -194,7 +194,9 @@ Jumlah seluruh probabilitas keluaran softmax adalah 1.
 
 Grafik fungsi aktivasi
 
-<img width="1106" height="741" alt="image" src="https://github.com/user-attachments/assets/78f14635-3a15-4bbc-9581-1da7d032a1ca" />
+<p align="center">
+    <img width="553" height="370,5" alt="image" src="https://github.com/user-attachments/assets/78f14635-3a15-4bbc-9581-1da7d032a1ca" />
+</p>
 
 ### 3.3 Fungsi Loss
 
