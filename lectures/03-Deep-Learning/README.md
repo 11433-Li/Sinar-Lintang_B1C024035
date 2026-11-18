@@ -674,36 +674,17 @@ Arsitektur CNN sederhana umumnya terdiri atas:
 
 Ilustrasi alur:
 
-``` text
-Citra Input
-    |
-    v
-Convolution + ReLU
-    |
-    v
-Max Pooling
-    |
-    v
-Convolution + ReLU
-    |
-    v
-Max Pooling
-    |
-    v
-Flatten
-    |
-    v
-Fully Connected
-    |
-    v
-Output / Klasifikasi
-```
+<img width="1225" height="617" alt="image" src="https://github.com/user-attachments/assets/55e7f8fe-ebe3-41f1-b4d2-c991093c0b88" />
 
 ### 5.2 Operasi Konvolusi
 
 Konvolusi dilakukan dengan menggeser filter/kernel di atas citra atau
 feature map. Pada setiap posisi, elemen kernel dikalikan dengan elemen
 citra yang bersesuaian, kemudian seluruh hasil perkalian dijumlahkan.
+
+Ilustrasinya seperti pada gambar berikut:
+
+<img width="1374" height="516" alt="image" src="https://github.com/user-attachments/assets/4b5aa75e-99b4-45b3-a36a-25888bc14810" />
 
 Contoh citra berukuran $3 \times 3$:
 
@@ -739,6 +720,8 @@ yang berbeda pula.
 Dalam CNN yang dilatih, nilai kernel bukan ditentukan secara manual
 untuk seluruh proses, melainkan dipelajari melalui optimasi berdasarkan
 loss.
+
+<img width="1802" height="717" alt="image" src="https://github.com/user-attachments/assets/a6e7a80e-1cd3-439e-8856-16323bc59345" />
 
 ### 5.3 Padding, Stride, dan Pooling
 
