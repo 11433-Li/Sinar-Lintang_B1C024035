@@ -731,7 +731,9 @@ Dalam CNN yang dilatih, nilai kernel bukan ditentukan secara manual
 untuk seluruh proses, melainkan dipelajari melalui optimasi berdasarkan
 loss.
 
-<img width="600" height="239" alt="0_9y3bJ3EXof_KKTsj" src="https://github.com/user-attachments/assets/c45e8d1a-9847-4e33-9aed-3eaa1d1c14e7" />
+<p align="center">
+    <img width="600" height="239" alt="0_9y3bJ3EXof_KKTsj" src="https://github.com/user-attachments/assets/c45e8d1a-9847-4e33-9aed-3eaa1d1c14e7" />
+</p>
 
 ### 5.3 Padding, Stride, dan Pooling
 
