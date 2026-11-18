@@ -740,9 +740,17 @@ loss.
 **Padding** adalah penambahan nilai di sekitar batas citra atau feature
 map. Padding dapat membantu mempertahankan ukuran keluaran konvolusi.
 
+<p align="center">
+    <img width="800" height="400" alt="0_lLW_v6lWDC5C_txJ" src="https://github.com/user-attachments/assets/945911a2-b635-4155-83ca-c557d51ac75e" />
+</p>
+
 **Stride** adalah jarak pergeseran filter setiap kali operasi konvolusi
 dilakukan. Stride lebih besar umumnya menghasilkan feature map yang
 lebih kecil.
+
+<p align="center">
+    <img width="1280" height="720" alt="0_Vj63TlgKUetVUUYj" src="https://github.com/user-attachments/assets/a5ccd4ff-6070-4782-b61e-0dcd935c6f64" />
+</p>
 
 Untuk input berukuran $N \times N$, kernel $F \times F$, padding $P$,
 dan stride $S$, ukuran keluaran pada masing-masing dimensi adalah:
@@ -753,6 +761,10 @@ $$
 
 **Pooling** mengurangi dimensi feature map. Salah satu metode yang umum
 adalah max pooling, yaitu mengambil nilai maksimum dari area tertentu.
+
+<p align="center">
+    <img width="726" height="550" alt="0_51NWG3HayLN3nNJ8" src="https://github.com/user-attachments/assets/fa693da4-604b-4dc0-a85a-03cf7e045c57" />
+</p>
 
 Contoh max pooling dengan jendela $2 \times 2$:
 
