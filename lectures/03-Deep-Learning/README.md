@@ -192,6 +192,10 @@ $$
 
 Jumlah seluruh probabilitas keluaran softmax adalah 1.
 
+Grafik fungsi aktivasi
+
+<img width="1106" height="741" alt="image" src="https://github.com/user-attachments/assets/78f14635-3a15-4bbc-9581-1da7d032a1ca" />
+
 ### 3.3 Fungsi Loss
 
 Fungsi loss mengukur selisih antara prediksi model dan label sebenarnya.
@@ -227,6 +231,8 @@ setiap iterasi pelatihan:
 
 Setelah gradien diperoleh, optimizer memperbarui parameter jaringan.
 Proses ini diulang selama beberapa iterasi atau *epoch*.
+
+<img width="738" height="414" alt="image" src="https://github.com/user-attachments/assets/006b04ea-4629-4fed-90e3-4e49ba9bbcf7" />
 
 ### 4.1 Forward Propagation
 
