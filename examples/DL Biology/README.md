@@ -48,12 +48,3 @@ Berdasarkan eksperimen yang telah dilakukan, dapat disimpulkan bahwa:
 - ReLU memperoleh akurasi tertinggi sebesar 96.8%, sedangkan Tanh memperoleh akurasi sebesar 96.4%.
 
 Perlu diperhatikan bahwa hasil eksperimen ini bergantung pada dataset, arsitektur neural network, parameter pelatihan, dan proses optimasi yang digunakan. Oleh karena itu, ReLU tidak selalu menghasilkan performa terbaik untuk semua permasalahan.
-
-## Pertanyaan Diskusi
-
-1. Mengapa neural network tanpa activation function tidak mampu mempelajari pola non-linear?
-2. Apa perbedaan karakteristik fungsi aktivasi Sigmoid dan Tanh?
-3. Mengapa Sigmoid dapat mengalami vanishing gradient?
-4. Mengapa ReLU sering digunakan pada hidden layer neural network?
-5. Apakah ReLU selalu lebih baik dibandingkan Tanh? Jelaskan alasannya.
-6. Bagaimana pengaruh pemilihan activation function terhadap proses training dan akurasi model?
