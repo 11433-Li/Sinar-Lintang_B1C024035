@@ -2,7 +2,7 @@
 
 **Mata Kuliah:** Data Sains dan AI untuk Biologi\
 **Topik:** Deep Learning, Artificial Neural Network, Forward
-Propagation, Backpropagation, dan Convolutional Neural Network\
+Propagation, dan Backpropagation\
 **Bahasa pemrograman:** Python\
 **Library utama:** NumPy, Matplotlib, TensorFlow/Keras, Scikit-learn
 
