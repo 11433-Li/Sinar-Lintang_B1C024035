@@ -18,6 +18,18 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 
 ## 2. Pengantar
 
+Computer Vision adalah bidang ilmu interdisipliner yang bertujuan untuk
+membuat komputer memproses, menganalisis gambar dan video, serta mengekstrak
+detail dengan cara yang sama seperti yang dilakukan oleh pikiran manusia.
+Sebagian besar tugas Computer Vision berkaitan dengan arsitektur CNN,
+karena dasar dari sebagian besar masalah adalah mengklasifikasikan gambar
+ke dalam label yang sudah diketahui.
+
+Computer vision task antara lain classification, classification + localization,
+object detection, dan Segmentation seperti yang terlihat pada gambar.
+
+<img width="1824" height="769" alt="image" src="https://github.com/user-attachments/assets/9b9d4978-9394-416c-a852-85c8989337d0" />
+
 Convolutional Neural Network (CNN) adalah arsitektur deep learning yang
 banyak digunakan untuk mengolah data berbentuk grid, terutama citra. CNN
 memanfaatkan operasi konvolusi untuk mempelajari pola lokal pada citra.
