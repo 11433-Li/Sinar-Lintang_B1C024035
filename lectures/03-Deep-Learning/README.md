@@ -787,11 +787,319 @@ Beberapa hal yang perlu diperhatikan:
 5. Kode ini menggunakan satu sampel data saja. Oleh karena itu, accuracy hanya
 6. akan bernilai 0% atau 100%.
 
-**Eksperimen:** ubah nilai learning rate, bobot awal, dan data masukan.
-Amati perubahan prediksi dan loss. Kode tersebut baru melakukan satu
-kali pembaruan parameter. Untuk melatih model, proses forward, loss,
-backward, dan update perlu diulang dalam beberapa epoch.
+**Eksperimen:** menggunakan dataset XOR (4 sampel)
 
+### Dataset XOR
+
+| Input X1 | Input X2 | Target Y |
+|:--------:|:--------:|:--------:|
+| 0        | 0        | 0        |
+| 0        | 1        | 1        |
+| 1        | 0        | 1        |
+| 1        | 1        | 0        |
+
+Secara matematis, XOR menghasilkan kelas 1 apabila kedua input berbeda.
+
+### Arsitektur Neural Network
+
+Arsitektur yang digunakan adalah **2–4–1 (Input–Hidden–Output)**.
+
+| Layer | Jumlah Neuron | Fungsi Aktivasi | Keterangan |
+|:-----:|:-------------:|:---------------:|:-----------|
+| Input | 2 | - | X1, X2 |
+| Hidden | 4 | Sigmoid | Hidden layer |
+| Output | 1 | Sigmoid | Prediksi kelas XOR |
+
+``` python
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ==================================================
+# 1. INISIALISASI
+# ==================================================
+
+np.set_printoptions(precision=5, suppress=True)
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+
+# Dataset XOR (4 sampel)
+X = np.array([
+    [0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]
+], dtype=float)
+
+y = np.array([
+    [0],
+    [1],
+    [1],
+    [0]
+], dtype=float)
+
+
+# Inisialisasi parameter
+np.random.seed(42)
+
+input_size = 2
+hidden_size = 4
+output_size = 1
+
+W1 = np.random.randn(input_size, hidden_size) * 0.5
+b1 = np.zeros((1, hidden_size))
+
+W2 = np.random.randn(hidden_size, output_size) * 0.5
+b2 = np.zeros((1, output_size))
+
+learning_rate = 1.0
+epochs = 10000
+epsilon = 1e-7
+
+
+# ==================================================
+# 2. MENAMPUNG HASIL TRAINING
+# ==================================================
+
+loss_history = []
+accuracy_history = []
+
+
+# ==================================================
+# 3. TRAINING NEURAL NETWORK
+# ==================================================
+
+for epoch in range(epochs):
+
+    # ----------------------------------------------
+    # FORWARD PROPAGATION
+    # ----------------------------------------------
+
+    z1 = X @ W1 + b1
+    a1 = sigmoid(z1)
+
+    z2 = a1 @ W2 + b2
+    y_pred = sigmoid(z2)
+
+    # ----------------------------------------------
+    # LOSS CALCULATION
+    # ----------------------------------------------
+
+    loss = -np.mean(
+        y * np.log(y_pred + epsilon) +
+        (1 - y) * np.log(1 - y_pred + epsilon)
+    )
+
+    # ----------------------------------------------
+    # ACCURACY CALCULATION
+    # ----------------------------------------------
+
+    y_pred_class = (y_pred >= 0.5).astype(int)
+    accuracy = np.mean(y_pred_class == y)
+
+    loss_history.append(loss)
+    accuracy_history.append(accuracy)
+
+    # ----------------------------------------------
+    # BACKWARD PROPAGATION
+    # ----------------------------------------------
+
+    # Output layer
+    dz2 = (y_pred - y) / len(X)
+
+    dW2 = a1.T @ dz2
+    db2 = np.sum(dz2, axis=0, keepdims=True)
+
+    # Hidden layer
+    dz1 = (dz2 @ W2.T) * a1 * (1 - a1)
+
+    dW1 = X.T @ dz1
+    db1 = np.sum(dz1, axis=0, keepdims=True)
+
+    # ----------------------------------------------
+    # UPDATE PARAMETERS
+    # ----------------------------------------------
+
+    W2 -= learning_rate * dW2
+    b2 -= learning_rate * db2
+
+    W1 -= learning_rate * dW1
+    b1 -= learning_rate * db1
+
+    # ----------------------------------------------
+    # MONITORING
+    # ----------------------------------------------
+
+    if (epoch + 1) % 1000 == 0:
+        print(
+            f"Epoch {epoch+1:5d} | "
+            f"Loss: {loss:.6f} | "
+            f"Accuracy: {accuracy:.2%}"
+        )
+
+
+# ==================================================
+# 4. EVALUASI MODEL
+# ==================================================
+
+z1 = X @ W1 + b1
+a1 = sigmoid(z1)
+
+z2 = a1 @ W2 + b2
+y_pred = sigmoid(z2)
+
+y_pred_class = (y_pred >= 0.5).astype(int)
+
+final_accuracy = np.mean(y_pred_class == y)
+
+print("\n========== HASIL PREDIKSI XOR ==========")
+
+for i in range(len(X)):
+    print(
+        f"Input: {X[i]} | "
+        f"Target: {int(y[i, 0])} | "
+        f"Probabilitas: {y_pred[i, 0]:.5f} | "
+        f"Prediksi: {y_pred_class[i, 0]}"
+    )
+
+print("\nFinal Loss:", loss_history[-1])
+print("Final Accuracy:", f"{final_accuracy:.2%}")
+
+
+# ==================================================
+# 5. VISUALISASI LOSS DAN ACCURACY
+# ==================================================
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 4))
+
+# Training Loss
+ax[0].plot(loss_history, color='red', linewidth=2)
+ax[0].set_title("Training Loss")
+ax[0].set_xlabel("Epoch")
+ax[0].set_ylabel("Binary Cross-Entropy Loss")
+ax[0].grid(True, alpha=0.3)
+
+# Training Accuracy
+ax[1].plot(accuracy_history, color='blue', linewidth=2)
+ax[1].set_title("Training Accuracy")
+ax[1].set_xlabel("Epoch")
+ax[1].set_ylabel("Accuracy")
+ax[1].set_ylim(-0.05, 1.05)
+ax[1].grid(True, alpha=0.3)
+
+plt.suptitle("Neural Network XOR Training")
+plt.tight_layout()
+plt.show()
+
+
+# ==================================================
+# 6. VISUALISASI DECISION BOUNDARY
+# ==================================================
+
+gx, gy = np.meshgrid(
+    np.linspace(-0.5, 1.5, 200),
+    np.linspace(-0.5, 1.5, 200)
+)
+
+grid = np.c_[gx.ravel(), gy.ravel()]
+
+# Forward propagation pada grid
+Z1 = grid @ W1 + b1
+A1 = sigmoid(Z1)
+
+Z2 = A1 @ W2 + b2
+P = sigmoid(Z2).reshape(gx.shape)
+
+plt.figure(figsize=(6, 5))
+
+plt.contourf(
+    gx, gy, P,
+    levels=np.linspace(0, 1, 21),
+    cmap='RdBu_r',
+    alpha=0.7
+)
+
+plt.contour(
+    gx, gy, P,
+    levels=[0.5],
+    colors='black',
+    linewidths=2
+)
+
+plt.scatter(
+    X[:, 0], X[:, 1],
+    c=y.ravel(),
+    cmap='RdBu_r',
+    s=180,
+    edgecolors='black',
+    linewidths=1.5
+)
+
+for i in range(len(X)):
+    plt.annotate(
+        f"Target: {int(y[i, 0])}",
+        (X[i, 0], X[i, 1]),
+        xytext=(7, 8),
+        textcoords='offset points'
+    )
+
+plt.title("XOR Decision Boundary")
+plt.xlabel("Input X1")
+plt.ylabel("Input X2")
+plt.xlim(-0.5, 1.5)
+plt.ylim(-0.5, 1.5)
+plt.colorbar(label="Prediction Probability")
+plt.grid(alpha=0.2)
+plt.show()
+```
+
+### Interpretasi Hasil Training
+
+<img width="1200" height="400" alt="Figure_12" src="https://github.com/user-attachments/assets/7ba94b04-1b87-42f1-8ef5-1f5cf63b63bf" />
+
+Berdasarkan grafik Training Loss dan Training Accuracy, dapat diamati bahwa model Neural Network dengan arsitektur 2–4–1 berhasil mempelajari pola klasifikasi pada dataset XOR.
+
+#### 1. Training Loss
+
+Grafik Training Loss menunjukkan perubahan nilai kesalahan prediksi model selama 10.000 epoch menggunakan Binary Cross-Entropy.
+
+- Pada awal training, nilai loss berada di sekitar 0.70.
+- Pada sekitar epoch 500–1.000, nilai loss mengalami penurunan yang sangat signifikan.
+- Setelah epoch 1.000, nilai loss terus menurun secara bertahap hingga mendekati 0.
+- Pada akhir training, nilai loss mendekati 0, yang menunjukkan bahwa prediksi model semakin mendekati target aktual.
+
+Penurunan nilai loss menunjukkan bahwa proses optimasi menggunakan Gradient Descent berhasil memperbarui bobot dan bias untuk mengurangi kesalahan prediksi.
+
+#### 2. Training Accuracy
+
+Grafik Training Accuracy menunjukkan tingkat ketepatan model dalam mengklasifikasikan empat sampel pada dataset XOR.
+
+- Pada awal training, akurasi mengalami perubahan yang cukup fluktuatif.
+- Akurasi meningkat secara bertahap dari 25%, 50%, hingga 75%.
+- Sekitar epoch 600–1.000, akurasi mencapai 100%.
+- Setelah mencapai 100%, akurasi tetap stabil hingga epoch terakhir.
+
+Akurasi 100% menunjukkan bahwa model berhasil mengklasifikasikan seluruh empat sampel dataset XOR dengan benar.
+
+#### 3. Analisis Hasil
+
+Berdasarkan kedua grafik, dapat disimpulkan bahwa:
+
+1. Model berhasil mempelajari pola nonlinier pada dataset XOR.
+2. Nilai Training Loss yang semakin mendekati 0 menunjukkan berkurangnya kesalahan prediksi.
+3. Training Accuracy mencapai 100%, yang berarti seluruh sampel training berhasil diklasifikasikan dengan benar.
+4. Stabilnya akurasi setelah mencapai 100% menunjukkan bahwa model telah berhasil mempelajari pola XOR pada dataset yang digunakan.
+5. Penggunaan hidden layer dengan fungsi aktivasi Sigmoid memungkinkan neural network mempelajari pola yang tidak dapat dipisahkan menggunakan satu garis lurus.
+
+#### 4. Kesimpulan
+
+Eksperimen menunjukkan bahwa Multi-Layer Perceptron (MLP) dengan arsitektur 2–4–1 mampu menyelesaikan permasalahan klasifikasi XOR melalui proses Forward Propagation, Backpropagation, dan Gradient Descent.
+
+Hasil ini memperlihatkan bahwa hidden layer dan fungsi aktivasi nonlinier memiliki peran penting dalam kemampuan neural network mempelajari hubungan yang kompleks antara input dan target.
+
+**Catatan:** Akurasi 100% pada eksperimen ini diperoleh dari empat sampel training. Hasil tersebut menunjukkan keberhasilan model mempelajari dataset XOR, tetapi belum cukup untuk membuktikan kemampuan generalisasi terhadap data baru.
 
 ## 5. Referensi
 
