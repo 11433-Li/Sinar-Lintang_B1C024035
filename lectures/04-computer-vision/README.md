@@ -845,3 +845,18 @@ Laporan praktikum minimal memuat:
 
 ## 11. Referensi
 
+1.  Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*.
+    MIT Press. https://www.deeplearningbook.org/
+2.  LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. *Nature*,
+    521, 436--444. https://doi.org/10.1038/nature14539
+3.  Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet
+    classification with deep convolutional neural networks. *Advances in
+    Neural Information Processing Systems*.
+4.  Chollet, F. (2021). *Deep Learning with Python* (2nd ed.). Manning
+    Publications.
+5.  TensorFlow. Image classification tutorial.
+    https://www.tensorflow.org/tutorials/images/classification
+6.  TensorFlow API. `tf.keras.utils.image_dataset_from_directory`.
+    https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory
+7.  Scikit-learn. Model evaluation: classification metrics.
+    https://scikit-learn.org/stable/modules/model_evaluation.html
