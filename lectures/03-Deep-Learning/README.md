@@ -782,10 +782,8 @@ Grafik akurasi dan loss training seperti pada gambar
 Beberapa hal yang perlu diperhatikan:
 1. Loss: menunjukkan besarnya kesalahan prediksi. Idealnya menurun selama training.
 2. Accuracy: menunjukkan proporsi prediksi yang benar. Idealnya meningkat.
-3. Epoch: satu putaran training. Pada kode ini satu epoch terdiri dari satu kali
-4. forward propagation, backpropagation, dan update parameter.
-5. Kode ini menggunakan satu sampel data saja. Oleh karena itu, accuracy hanya
-6. akan bernilai 0% atau 100%.
+3. Epoch: satu putaran training. Pada kode ini satu epoch terdiri dari satu kali forward propagation, backpropagation, dan update parameter.
+4. Kode ini menggunakan satu sampel data saja. Oleh karena itu, accuracy hanya akan bernilai 0% atau 100%.
 
 **Eksperimen:** menggunakan dataset XOR (4 sampel)
 
