@@ -1,6 +1,23 @@
 # Lecture Note: Convolutional Neural Network (CNN)
 
-## 1. Pengantar
+**Mata Kuliah:** Data Sains dan AI untuk Biologi\
+**Topik:** Deep Learning, Artificial Neural Network, Forward
+Propagation, dan Backpropagation\
+**Bahasa pemrograman:** Python\
+**Library utama:** NumPy, Matplotlib, TensorFlow/Keras, Scikit-learn
+
+## 1. Capaian Pembelajaran
+
+Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
+
+1.  Menjelaskan peran Convolutional Neural Network (CNN) dalam
+    pengolahan citra.
+2.  Membangun dan mengevaluasi model CNN sederhana untuk klasifikasi
+    citra biologis.
+3.  Menginterpretasikan hasil evaluasi model dengan accuracy, precision,
+    recall, F1-score, dan confusion matrix
+
+## 2. Pengantar
 
 Convolutional Neural Network (CNN) adalah arsitektur deep learning yang
 banyak digunakan untuk mengolah data berbentuk grid, terutama citra. CNN
@@ -10,7 +27,7 @@ CNN sesuai untuk klasifikasi citra biologis karena informasi penting
 sering muncul sebagai pola spasial, seperti tekstur, bentuk sel,
 struktur jaringan, atau karakteristik permukaan daun.
 
-### 1.1 Struktur Umum CNN
+### 2.1 Struktur Umum CNN
 
 Arsitektur CNN sederhana umumnya terdiri atas:
 
@@ -29,7 +46,7 @@ Ilustrasi alur:
 
 <img width="1225" height="617" alt="image" src="https://github.com/user-attachments/assets/55e7f8fe-ebe3-41f1-b4d2-c991093c0b88" />
 
-### 1.2 Operasi Konvolusi
+### 2.2 Operasi Konvolusi
 
 Konvolusi dilakukan dengan menggeser filter/kernel di atas citra atau
 feature map. Pada setiap posisi, elemen kernel dikalikan dengan elemen
@@ -78,7 +95,7 @@ loss.
     <img width="600" height="239" alt="0_9y3bJ3EXof_KKTsj" src="https://github.com/user-attachments/assets/c45e8d1a-9847-4e33-9aed-3eaa1d1c14e7" />
 </p>
 
-### 1.3 Padding, Stride, dan Pooling
+### 2.3 Padding, Stride, dan Pooling
 
 **Padding** adalah penambahan nilai di sekitar batas citra atau feature
 map. Padding dapat membantu mempertahankan ukuran keluaran konvolusi.
@@ -128,7 +145,7 @@ $$
 Pooling membantu mengurangi jumlah komputasi dan membuat representasi
 lebih ringkas.
 
-### 1.4 Mengapa CNN Menggunakan Backpropagation?
+### 2.4 Mengapa CNN Menggunakan Backpropagation?
 
 CNN juga dilatih menggunakan prinsip forward propagation dan backward
 propagation.
@@ -145,9 +162,9 @@ Dengan demikian, CNN bukan metode yang terpisah dari neural network. CNN
 merupakan salah satu arsitektur jaringan saraf yang dirancang khusus
 untuk memanfaatkan struktur spasial data citra.
 
-## 2. Praktikum: Klasifikasi Citra Biologis Menggunakan CNN
+## 3. Praktikum: Klasifikasi Citra Biologis Menggunakan CNN
 
-### 2.1 Tujuan Praktikum
+### 3.1 Tujuan Praktikum
 
 Mahasiswa akan membangun CNN sederhana untuk mengklasifikasikan citra ke
 dalam dua kelas:
@@ -163,7 +180,7 @@ dan harus disesuaikan dengan label dataset yang benar.
 bukan alat diagnosis medis. Hasil model tidak boleh digunakan untuk
 keputusan klinis.
 
-### 2.2 Persiapan Lingkungan
+### 3.2 Persiapan Lingkungan
 
 Instal library yang diperlukan:
 
@@ -181,7 +198,7 @@ print("TensorFlow version:", tf.__version__)
 Praktikum dapat dijalankan menggunakan Google Colab atau komputer lokal
 yang telah memiliki Python dan TensorFlow.
 
-### 2.3 Struktur Dataset
+### 3.3 Struktur Dataset
 
 Siapkan dataset citra dengan struktur direktori berikut:
 
@@ -211,7 +228,7 @@ sembarang antara data latih dan data uji. Pembagian berdasarkan subjek
 atau spesimen lebih tepat untuk menghindari kebocoran data (*data
 leakage*).
 
-### 2.4 Memuat Dataset
+### 3.4 Memuat Dataset
 
 Contoh berikut membagi data menjadi data latih dan validasi. Data uji
 sebaiknya disiapkan secara terpisah dan tidak digunakan untuk memilih
@@ -264,7 +281,7 @@ Dengan `label_mode="binary"`, label untuk dua kelas diberikan sebagai
 nilai numerik 0 dan 1. Periksa `class_names` agar interpretasi label
 tidak tertukar.
 
-### 2.5 Menampilkan Contoh Citra
+### 3.5 Menampilkan Contoh Citra
 
 ``` python
 import matplotlib.pyplot as plt
@@ -287,7 +304,7 @@ Tahap visualisasi penting untuk memeriksa apakah citra terbaca dengan
 benar, label sesuai, dan tidak terdapat file yang rusak atau citra yang
 tidak relevan.
 
-### 2.6 Optimasi Input Pipeline
+### 3.6 Optimasi Input Pipeline
 
 ``` python
 AUTOTUNE = tf.data.AUTOTUNE
@@ -309,7 +326,7 @@ saat ini.
 Untuk dataset yang terlalu besar untuk disimpan dalam memori,
 pertimbangkan menghapus `cache()` atau menggunakan cache ke disk.
 
-### 2.7 Membangun Arsitektur CNN
+### 3.7 Membangun Arsitektur CNN
 
 Model berikut menggunakan dua blok konvolusi dan max pooling, kemudian
 diikuti fully connected layer.
@@ -368,7 +385,7 @@ Penjelasan arsitektur:
 -   `Dense(1, sigmoid)`: menghasilkan probabilitas untuk kelas dengan
     label 1.
 
-### 2.8 Kompilasi Model
+### 3.8 Kompilasi Model
 
 ``` python
 model.compile(
@@ -393,7 +410,7 @@ jika jumlah data antar kelas tidak seimbang. Karena itu, evaluasi
 lanjutan menggunakan precision, recall, F1-score, dan confusion matrix
 juga diperlukan.
 
-### 2.9 Melatih Model
+### 3.9 Melatih Model
 
 ``` python
 EPOCHS = 20
@@ -409,7 +426,7 @@ Satu epoch berarti model telah memproses seluruh batch data latih satu
 kali. Selama pelatihan, model memperbarui bobot berdasarkan loss dan
 optimizer.
 
-### 2.10 Visualisasi Akurasi dan Loss
+### 3.10 Visualisasi Akurasi dan Loss
 
 ``` python
 import matplotlib.pyplot as plt
@@ -454,7 +471,7 @@ Interpretasi umum:
 Grafik harus ditafsirkan bersama ukuran dataset, variasi citra, dan
 hasil evaluasi pada data uji yang independen.
 
-### 2.11 Evaluasi Model
+### 3.11 Evaluasi Model
 
 Untuk contoh awal ini, validation set digunakan untuk memperlihatkan
 cara menghitung metrik. Dalam eksperimen yang lebih kuat, siapkan test
@@ -550,7 +567,7 @@ berarti sampel abnormal diprediksi normal. Oleh karena itu, recall kelas
 abnormal dapat menjadi metrik penting. Namun, pemilihan metrik harus
 mengikuti tujuan penelitian dan konsekuensi kesalahan.
 
-### 2.12 Prediksi Satu Citra Baru
+### 3.12 Prediksi Satu Citra Baru
 
 Pastikan citra baru memiliki format yang sesuai. Fungsi berikut membaca
 citra, mengubah ukurannya, lalu menghasilkan prediksi.
@@ -582,7 +599,7 @@ Perlu diingat bahwa probabilitas keluaran model bukan jaminan bahwa
 prediksi benar. Model dapat menghasilkan prediksi dengan keyakinan
 tinggi pada citra yang berbeda dari distribusi data pelatihan.
 
-### 2.13 Menyimpan dan Memuat Model
+### 3.13 Menyimpan dan Memuat Model
 
 Menyimpan model:
 
@@ -601,7 +618,7 @@ loaded_model = tf.keras.models.load_model(
 Simpan pula informasi nama kelas, ukuran citra, preprocessing, pembagian
 dataset, dan konfigurasi eksperimen agar hasil dapat direproduksi.
 
-## 3. Pengembangan Eksperimen
+## 4. Pengembangan Eksperimen
 
 Setelah model dasar berjalan, lakukan eksperimen terkontrol. Ubah satu
 atau beberapa konfigurasi dengan mencatat seluruh perubahan.
@@ -662,9 +679,9 @@ model = tf.keras.Sequential([
 ])
 ```
 
-## 4. Permasalahan Umum dalam Klasifikasi Citra Biologis
+## 5. Permasalahan Umum dalam Klasifikasi Citra Biologis
 
-### 4.1 Overfitting
+### 5.1 Overfitting
 
 Overfitting terjadi ketika model terlalu menyesuaikan diri dengan data
 latih sehingga performanya menurun pada data baru.
@@ -695,7 +712,7 @@ history = model.fit(
 )
 ```
 
-### 4.2 Ketidakseimbangan Kelas
+### 5.2 Ketidakseimbangan Kelas
 
 Jika jumlah citra kelas normal jauh lebih banyak daripada kelas
 abnormal, accuracy dapat terlihat tinggi meskipun model gagal mengenali
@@ -709,7 +726,7 @@ Strategi penanganan:
 -   Menambah data kelas minoritas jika memungkinkan.
 -   Menggunakan teknik sampling dengan hati-hati hanya pada data latih.
 
-### 4.3 Data Leakage
+### 5.3 Data Leakage
 
 Data leakage terjadi ketika informasi dari data validasi atau data uji
 secara tidak sengaja memengaruhi pelatihan atau pemilihan model. Dalam
@@ -724,7 +741,7 @@ Strategi pencegahan:
 -   Tidak menggunakan test set untuk memilih model atau threshold.
 -   Mendokumentasikan proses preprocessing dan pembagian dataset.
 
-### 4.4 Generalisasi Model
+### 5.4 Generalisasi Model
 
 Model yang memiliki akurasi tinggi pada satu dataset belum tentu bekerja
 baik pada dataset lain. Perbedaan perangkat mikroskop, pencahayaan,
@@ -740,7 +757,7 @@ Evaluasi yang lebih kuat dapat mencakup:
 -   Pengukuran variasi performa melalui beberapa pengulangan atau
     cross-validation yang sesuai.
 
-## 5. Tugas Praktikum Mahasiswa
+## 6. Tugas Praktikum Mahasiswa
 
 ### Tugas 1: Memahami Forward dan Backward Propagation
 
@@ -813,7 +830,7 @@ Laporan praktikum minimal memuat:
 9.  Analisis kesalahan prediksi.
 10. Kesimpulan dan keterbatasan model.
 
-## 10. Ringkasan
+## 7. Ringkasan
 
 1.  CNN merupakan arsitektur neural network yang dirancang untuk
     mempelajari pola spasial pada citra.
