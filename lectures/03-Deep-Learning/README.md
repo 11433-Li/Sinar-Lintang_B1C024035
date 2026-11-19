@@ -586,73 +586,206 @@ melihat bahwa forward propagation, perhitungan loss, backward
 propagation, dan pembaruan bobot dapat dilakukan secara eksplisit.
 
 ``` python
+
 import numpy as np
+import matplotlib.pyplot as plt
+
+# ==================================================
+# 1. INISIALISASI
+# ==================================================
 
 np.set_printoptions(precision=5, suppress=True)
 
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 
+
 # Data: dua fitur dan satu target biner
 X = np.array([[1.0, 0.0]])
 y = np.array([[1.0]])
 
 # Inisialisasi bobot dan bias
-W1 = np.array([[0.1, 0.2],
-               [0.3, 0.4]])  # (input, hidden)
+W1 = np.array([
+    [0.1, 0.2],
+    [0.3, 0.4]
+])
 
 b1 = np.array([[0.0, 0.0]])
 
-W2 = np.array([[0.5],
-               [0.6]])      # (hidden, output)
+W2 = np.array([
+    [0.5],
+    [0.6]
+])
 
 b2 = np.array([[0.0]])
 
 learning_rate = 0.1
+epochs = 1000
+epsilon = 1e-7
 
-# FORWARD PROPAGATION
+
+# ==================================================
+# 2. MENAMPUNG HASIL TRAINING
+# ==================================================
+
+loss_history = []
+accuracy_history = []
+
+
+# ==================================================
+# 3. TRAINING NEURAL NETWORK
+# ==================================================
+
+for epoch in range(epochs):
+
+    # ----------------------------------------------
+    # FORWARD PROPAGATION
+    # ----------------------------------------------
+
+    z1 = X @ W1 + b1
+    a1 = sigmoid(z1)
+
+    z2 = a1 @ W2 + b2
+    y_pred = sigmoid(z2)
+
+    # ----------------------------------------------
+    # LOSS CALCULATION
+    # Binary Cross-Entropy
+    # ----------------------------------------------
+
+    loss = -np.mean(
+        y * np.log(y_pred + epsilon) +
+        (1 - y) * np.log(1 - y_pred + epsilon)
+    )
+
+    # ----------------------------------------------
+    # ACCURACY CALCULATION
+    # ----------------------------------------------
+
+    y_pred_class = (y_pred >= 0.5).astype(int)
+    accuracy = np.mean(y_pred_class == y)
+
+    loss_history.append(loss)
+    accuracy_history.append(accuracy)
+
+    # ----------------------------------------------
+    # BACKWARD PROPAGATION
+    # ----------------------------------------------
+
+    # Output layer
+    dz2 = y_pred - y
+
+    dW2 = a1.T @ dz2
+    db2 = np.sum(dz2, axis=0, keepdims=True)
+
+    # Hidden layer
+    dz1 = (dz2 @ W2.T) * a1 * (1 - a1)
+
+    dW1 = X.T @ dz1
+    db1 = np.sum(dz1, axis=0, keepdims=True)
+
+    # ----------------------------------------------
+    # UPDATE PARAMETERS
+    # ----------------------------------------------
+
+    W2 -= learning_rate * dW2
+    b2 -= learning_rate * db2
+
+    W1 -= learning_rate * dW1
+    b1 -= learning_rate * db1
+
+    # ----------------------------------------------
+    # PRINT TRAINING PROGRESS
+    # ----------------------------------------------
+
+    if (epoch + 1) % 100 == 0:
+        print(
+            f"Epoch {epoch + 1:4d} | "
+            f"Loss: {loss:.6f} | "
+            f"Accuracy: {accuracy:.2%}"
+        )
+
+
+# ==================================================
+# 4. EVALUASI MODEL
+# ==================================================
+
+# Forward propagation menggunakan parameter akhir
 z1 = X @ W1 + b1
 a1 = sigmoid(z1)
 
 z2 = a1 @ W2 + b2
 y_pred = sigmoid(z2)
 
-# Binary Cross-Entropy
-epsilon = 1e-7
-loss = -np.mean(
-    y * np.log(y_pred + epsilon) +
-    (1 - y) * np.log(1 - y_pred + epsilon)
+y_pred_class = (y_pred >= 0.5).astype(int)
+
+print("\n========== HASIL TRAINING ==========")
+
+print("Hidden output:\n", a1)
+print("Prediksi probabilitas:\n", y_pred)
+print("Target aktual:\n", y)
+print("Kelas prediksi:\n", y_pred_class)
+
+print("\n========== PARAMETER AKHIR ==========")
+
+print("W1:\n", W1)
+print("b1:\n", b1)
+
+print("W2:\n", W2)
+print("b2:\n", b2)
+
+print("\nFinal Loss:", loss_history[-1])
+print("Final Accuracy:", f"{accuracy_history[-1]:.2%}")
+
+
+# ==================================================
+# 5. VISUALISASI LOSS DAN ACCURACY
+# ==================================================
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 4))
+
+# Training Loss
+ax[0].plot(
+    range(1, epochs + 1),
+    loss_history,
+    color='red',
+    linewidth=2
 )
 
-print("Hidden output:", a1)
-print("Prediksi:", y_pred)
-print("Loss:", loss)
+ax[0].set_title("Training Loss")
+ax[0].set_xlabel("Epoch")
+ax[0].set_ylabel("Binary Cross-Entropy Loss")
+ax[0].grid(True, alpha=0.3)
 
-# BACKWARD PROPAGATION
-# Untuk sigmoid + binary cross-entropy:
-dz2 = y_pred - y
+# Training Accuracy
+ax[1].plot(
+    range(1, epochs + 1),
+    accuracy_history,
+    color='blue',
+    linewidth=2
+)
 
-dW2 = a1.T @ dz2
-db2 = np.sum(dz2, axis=0, keepdims=True)
+ax[1].set_title("Training Accuracy")
+ax[1].set_xlabel("Epoch")
+ax[1].set_ylabel("Accuracy")
+ax[1].set_ylim(-0.05, 1.05)
+ax[1].grid(True, alpha=0.3)
 
-dz1 = (dz2 @ W2.T) * a1 * (1 - a1)
-
-dW1 = X.T @ dz1
-db1 = np.sum(dz1, axis=0, keepdims=True)
-
-# UPDATE PARAMETER
-W2 -= learning_rate * dW2
-b2 -= learning_rate * db2
-
-W1 -= learning_rate * dW1
-b1 -= learning_rate * db1
-
-print("\nParameter setelah satu update:")
-print("W1:\n", W1)
-print("b1:", b1)
-print("W2:\n", W2)
-print("b2:", b2)
+plt.suptitle("Neural Network Training Performance")
+plt.tight_layout()
+plt.show()
 ```
+Grafik akurasi dan loss training seperti pada gambar
+
+<img width="1200" height="400" alt="Figure_11" src="https://github.com/user-attachments/assets/1e211709-a405-40c5-8ad8-b821bc493098" />
+
+Beberapa hal yang perlu diperhatikan:
+1. Loss: menunjukkan besarnya kesalahan prediksi. Idealnya menurun selama training.
+2. Accuracy: menunjukkan proporsi prediksi yang benar. Idealnya meningkat.
+3. Epoch: satu putaran training. Pada kode ini satu epoch terdiri dari satu kali
+4. forward propagation, backpropagation, dan update parameter.
+5. Kode ini menggunakan satu sampel data saja. Oleh karena itu, accuracy hanya
+6. akan bernilai 0% atau 100%.
 
 **Eksperimen:** ubah nilai learning rate, bobot awal, dan data masukan.
 Amati perubahan prediksi dan loss. Kode tersebut baru melakukan satu
