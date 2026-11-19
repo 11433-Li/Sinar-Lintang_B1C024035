@@ -112,11 +112,11 @@ $$
 
 Keterangan:
 
-- `x_i`: Nilai masukan ke-i (*input*).
-- `w_i`: Bobot untuk masukan ke-i (*weight*).
-- `b`: Bias.
-- `n`: Jumlah masukan.
-- `z`: Nilai sebelum fungsi aktivasi (*pre-activation value*).
+- $$x_i$$: Nilai masukan ke-i (*input*).
+- $$w_i$$: Bobot untuk masukan ke-i (*weight*).
+- $$b$$: Bias.
+- $$n$$: Jumlah masukan.
+- $$z$$: Nilai sebelum fungsi aktivasi (*pre-activation value*).
 
 Keluaran neuron diperoleh dengan menerapkan fungsi aktivasi:
 
