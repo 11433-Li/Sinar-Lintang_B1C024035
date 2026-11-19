@@ -1,8 +1,7 @@
 # Lecture Note: Convolutional Neural Network (CNN)
 
 **Mata Kuliah:** Data Sains dan AI untuk Biologi\
-**Topik:** Deep Learning, Artificial Neural Network, Forward
-Propagation, dan Backpropagation\
+**Topik:** Convolutional Neural Network\
 **Bahasa pemrograman:** Python\
 **Library utama:** NumPy, Matplotlib, TensorFlow/Keras, Scikit-learn
 
