@@ -16,12 +16,6 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
     aktivasi, fungsi loss, dan proses optimasi.
 3.  Menghitung proses forward propagation dan backward propagation pada
     jaringan saraf sederhana.
-4.  Menjelaskan peran Convolutional Neural Network (CNN) dalam
-    pengolahan citra.
-5.  Membangun dan mengevaluasi model CNN sederhana untuk klasifikasi
-    citra biologis.
-6.  Menginterpretasikan hasil evaluasi model dengan accuracy, precision,
-    recall, F1-score, dan confusion matrix.
 
 ## 2. Pengantar Deep Learning
 
@@ -31,10 +25,18 @@ mempelajari representasi atau pola dari data. Model deep learning dapat
 mempelajari fitur secara bertingkat, mulai dari pola sederhana hingga
 pola yang lebih kompleks.
 
-Pada pengolahan citra, misalnya, lapisan awal CNN dapat mempelajari pola
-tepi dan tekstur. Lapisan berikutnya dapat menggabungkan pola tersebut
-menjadi bentuk atau struktur, sedangkan lapisan yang lebih dalam dapat
-mempelajari karakteristik objek yang relevan untuk klasifikasi.
+Konsep deep learning sebenarnya sudah ada sejak sekitar seratus tahun yang lalu,
+namun baru benar-benar berkembang pesat dalam beberapa tahun terakhir.
+Untuk memahami alasannya, bayangkan sebuah grafik yang menunjukkan hubungan antara
+jumlah data dan kinerja model. Pada grafik tersebut, sumbu-x mewakili jumlah data,
+sedangkan sumbu-y menunjukkan tingkat kinerja (performance). Jika kita menggambarnya,
+kurva tersebut akan terlihat menanjak (naik) seiring bertambahnya data, tetapi setelah
+mencapai jumlah data yang sangat besar, kurva akan mulai mendatar. Artinya, pada
+awalnya, penambahan data sangat membantu meningkatkan kinerja model. Namun, setelah
+titik tertentu, penambahan data lebih banyak tidak lagi memberikan peningkatan besar,
+kinerja model cenderung stabil atau konstan. Hal inilah yang menggambarkan bagaimana
+perkembangan deep learning bergantung pada ketersediaan data dan kapasitas model
+untuk memanfaatkannya secara efektif.
 
 Contoh penerapan deep learning dalam biologi:
 
